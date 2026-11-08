@@ -1,13 +1,19 @@
 {
- "data": "2026-11-08",
- "fonte": "Odds pré-jogo Betano PT lidas às 20:47 (Lisboa, UTC+0)",
+ "data": "2026-11-09",
+ "fonte": "Odds pré-jogo Betano PT lidas na véspera às 22:49 (Lisboa)",
  "jogos": [
-  {"inicio_utc": "2026-11-08T20:55:00Z", "torneio": "Challenger Lima (qual.)", "fav": "Alex Hernandez", "odd_fav": 1.10, "dog": "Federico Zeballos", "odd_dog": 4.70},
+  {"inicio_utc": "2026-11-08T20:55:00Z", "torneio": "Challenger Lima (qual.)", "fav": "Alex Hernandez", "odd_fav": 1.1, "dog": "Federico Zeballos", "odd_dog": 4.7},
   {"inicio_utc": "2026-11-08T21:10:00Z", "torneio": "WTA Finals", "fav": "Coco Gauff", "odd_fav": 1.62, "dog": "Jessica Pegula", "odd_dog": 2.27},
   {"inicio_utc": "2026-11-08T21:10:00Z", "torneio": "Challenger Knoxville (qual.)", "fav": "Shunsuke Mitsui", "odd_fav": 1.57, "dog": "Geoffrey Blancaneaux", "odd_dog": 2.07},
-  {"inicio_utc": "2026-11-08T21:20:00Z", "torneio": "Challenger Knoxville (qual.)", "fav": "Kenta Miyoshi", "odd_fav": 1.60, "dog": "Andrew Fenty", "odd_dog": 2.02},
+  {"inicio_utc": "2026-11-08T21:20:00Z", "torneio": "Challenger Knoxville (qual.)", "fav": "Kenta Miyoshi", "odd_fav": 1.6, "dog": "Andrew Fenty", "odd_dog": 2.02},
   {"inicio_utc": "2026-11-08T22:20:00Z", "torneio": "Challenger Knoxville (qual.)", "fav": "Sebastian Dominko", "odd_fav": 1.31, "dog": "Patrick Zahraj", "odd_dog": 2.77},
-  {"inicio_utc": "2026-11-08T22:30:00Z", "torneio": "Challenger Knoxville (qual.)", "fav": "Kaylan Bigun", "odd_fav": 1.50, "dog": "Giles Hussey", "odd_dog": 2.22},
-  {"inicio_utc": "2026-11-08T23:30:00Z", "torneio": "Challenger Knoxville (qual.)", "fav": "Daniel Milavsky", "odd_fav": 1.20, "dog": "Luca Wiedenmann", "odd_dog": 3.45}
+  {"inicio_utc": "2026-11-08T22:30:00Z", "torneio": "Challenger Knoxville (qual.)", "fav": "Kaylan Bigun", "odd_fav": 1.5, "dog": "Giles Hussey", "odd_dog": 2.22},
+  {"inicio_utc": "2026-11-09T00:35:00Z", "torneio": "Challenger - Knoxville - Qualificações", "fav": "Daniel Milavsky", "odd_fav": 1.2, "dog": "Luca Wiedenmann", "odd_dog": 3.45},
+  {"inicio_utc": "2026-11-09T11:10:00Z", "torneio": "ATP - Stockholm", "fav": "Alex Michelsen", "odd_fav": 1.29, "dog": "Yannick Hanfmann", "odd_dog": 3.5},
+  {"inicio_utc": "2026-11-09T12:00:00Z", "torneio": "ATP - Stockholm", "fav": "Cameron Norrie", "odd_fav": 1.38, "dog": "James Duckworth", "odd_dog": 3.0},
+  {"inicio_utc": "2026-11-09T13:10:00Z", "torneio": "ATP - Stockholm", "fav": "Ugo Humbert", "odd_fav": 1.39, "dog": "Adolfo Daniel Vallejo", "odd_dog": 2.92},
+  {"inicio_utc": "2026-11-09T17:00:00Z", "torneio": "ATP - Stockholm", "fav": "Tomas Martin Etcheverry", "odd_fav": 1.27, "dog": "Max Dahlin", "odd_dog": 3.7},
+  {"inicio_utc": "2026-11-09T20:00:00Z", "torneio": "WTA Finals - WTA Finals (F)", "fav": "Aryna Sabalenka", "odd_fav": 1.45, "dog": "Karolina Muchova", "odd_dog": 2.7},
+  {"inicio_utc": "2026-11-09T21:10:00Z", "torneio": "WTA Finals - WTA Finals (F)", "fav": "Mirra Andreeva", "odd_fav": 1.5, "dog": "Elina Svitolina", "odd_dog": 2.57}
  ]
 }
