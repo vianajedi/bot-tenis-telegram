@@ -12,6 +12,8 @@ Não lê odds ao vivo e não faz apostas.
 import json, os, re, subprocess, sys, time, unicodedata, logging
 from datetime import datetime, timedelta, timezone
 import requests
+from zoneinfo import ZoneInfo
+LISBOA = ZoneInfo("Europe/Lisbon")
 
 API = "https://api.livetennisapi.com/api/public/v1"
 AQUI = os.path.dirname(os.path.abspath(__file__))
@@ -204,9 +206,9 @@ def main():
         for j in sorted(lista["jogos"], key=lambda x: x["inicio_utc"]):
             p = p_fav(j["odd_fav"], "BO3")
             alvo = pt(100 / (100 - p)) if p else "–"
-            h = datetime.fromisoformat(j["inicio_utc"].replace("Z", "+00:00")).strftime("%d/%m %H:%M")
+            h = datetime.fromisoformat(j["inicio_utc"].replace("Z", "+00:00")).astimezone(LISBOA).strftime("%d/%m %H:%M")
             linhas.append(f"{h} {apelido(j['fav']).title()} {pt(j['odd_fav'])} v {apelido(j['dog']).title()} {pt(j['odd_dog'])} → <b>{alvo}</b>")
-        cab = f"📋 <b>Lista de ténis {lista.get('data','')}</b> ({len(lista['jogos'])} jogos, horas UTC)\nNúmero a negrito = odd mínima do não favorito se o favorito perder o 1.º set. Também recebes aviso no início do 3.º set (sets 1-1).\n\n↩️ <b>Para registar um caso, responde ao alerta</b> (não a esta lista):\n• odds ao vivo, favorito primeiro: <code>3,10 1,40 betano</code>\n• no fim do jogo: <code>ganhou Apelido</code>\n\n"
+        cab = f"📋 <b>Lista de ténis {lista.get('data','')}</b> ({len(lista['jogos'])} jogos, hora de Lisboa)\nNúmero a negrito = odd mínima do não favorito se o favorito perder o 1.º set. Também recebes aviso no início do 3.º set (sets 1-1).\n\n↩️ <b>Para registar um caso, responde ao alerta</b> (não a esta lista):\n• odds ao vivo, favorito primeiro: <code>3,10 1,40 betano</code>\n• no fim do jogo: <code>ganhou Apelido</code>\n\n"
         txt = cab
         for l in linhas:
             if len(txt) + len(l) > 3800:
