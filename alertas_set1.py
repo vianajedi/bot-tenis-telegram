@@ -106,9 +106,29 @@ def main():
     inicio = time.time()
     log.info("Lista: %d jogos (%s). Pedidos hoje: %d/%d.", len(lista["jogos"]), lista.get("data"), est["pedidos"], LIMITE_DIA)
 
+    def resumo(lista):
+        linhas = []
+        for j in sorted(lista["jogos"], key=lambda x: x["inicio_utc"]):
+            p = p_fav(j["odd_fav"], "BO3")
+            alvo = pt(100 / (100 - p)) if p else "–"
+            h = datetime.fromisoformat(j["inicio_utc"].replace("Z", "+00:00")).strftime("%H:%M")
+            linhas.append(f"{h} {apelido(j['fav']).title()} {pt(j['odd_fav'])} v {apelido(j['dog']).title()} {pt(j['odd_dog'])} → <b>{alvo}</b>")
+        cab = f"📋 <b>Lista de ténis {lista.get('data','')}</b> ({len(lista['jogos'])} jogos, horas UTC)\nNúmero a negrito = odd mínima do não favorito se o favorito perder o 1.º set.\n\n"
+        txt = cab
+        for l in linhas:
+            if len(txt) + len(l) > 3800:
+                telegram(txt); txt = ""
+            txt += l + "\n"
+        if txt:
+            telegram(txt)
+
     while time.time() - inicio < duracao:
         agora = datetime.now(timezone.utc)
         lista = ler_lista()
+        if lista.get("jogos") and est.get("lista_avisada") != lista.get("data"):
+            resumo(lista)
+            est["lista_avisada"] = lista.get("data")
+            gravar(ESTADO, est)
         if agora.strftime("%Y-%m-%d") != est["dia"]:
             est["dia"], est["pedidos"] = agora.strftime("%Y-%m-%d"), 0
         pendentes = []
@@ -184,7 +204,15 @@ def main():
                 e["alertado"] = agora.isoformat()
                 log.info("ALERTA: %s", chave)
         gravar(ESTADO, est)
-        time.sleep(INTERVALO)
+        fim_janelas = max((datetime.fromisoformat(j["inicio_utc"].replace("Z", "+00:00")) + timedelta(hours=5)
+                           for _, j in pendentes), default=agora)
+        fim_janelas = max([fim_janelas] + [datetime.fromisoformat(j["inicio_utc"].replace("Z", "+00:00")) + timedelta(hours=5) for j in futuros])
+        fim_dia = agora.replace(hour=23, minute=59, second=59)
+        segundos = (min(fim_janelas, fim_dia) - agora).total_seconds()
+        restantes = max(1, LIMITE_DIA - est["pedidos"])
+        espera = max(INTERVALO, int(segundos / restantes))
+        log.info("Próxima verificação em %d s.", espera)
+        time.sleep(espera)
     gravar(ESTADO, est)
 
 
