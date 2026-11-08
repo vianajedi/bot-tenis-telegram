@@ -25,6 +25,8 @@ log = logging.getLogger("set1")
 # Probabilidade do favorito ganhar o jogo depois de PERDER o 1.º set (%)
 BANDAS = [(1.01, 1.15), (1.15, 1.30), (1.30, 1.45), (1.45, 1.60), (1.60, 1.80), (1.80, 2.10)]
 PERDEU = {"BO3": [57.7, 41.9, 32.9, 29.8, 25.6, 22.4], "BO5": [78.2, 55.6, 46.3, 34.9, 33.3, 28.9]}
+# Sets 1-1 (melhor de 3): probabilidade do favorito ganhar o 3.º set / o jogo (%)
+UM_UM = {"ganhou_s1": [78.6, 66.3, 60.9, 53.2, 48.0, 48.8], "perdeu_s1": [80.3, 70.1, 62.2, 62.8, 57.2, 52.8]}
 FINAS_BO3 = [(1.05, 1.10, 62.2), (1.10, 1.15, 54.5), (1.15, 1.20, 49.3), (1.20, 1.25, 44.5), (1.25, 1.30, 37.5)]
 
 
@@ -36,6 +38,13 @@ def p_fav(odd, fmt):
     for i, (a, b) in enumerate(BANDAS):
         if a <= odd < b:
             return PERDEU.get(fmt, PERDEU["BO3"])[i]
+    return None
+
+
+def p_fav_11(odd, fav_ganhou_s1):
+    for i, (a, b) in enumerate(BANDAS):
+        if a <= odd < b:
+            return UM_UM["ganhou_s1" if fav_ganhou_s1 else "perdeu_s1"][i]
     return None
 
 
@@ -113,7 +122,7 @@ def main():
             alvo = pt(100 / (100 - p)) if p else "–"
             h = datetime.fromisoformat(j["inicio_utc"].replace("Z", "+00:00")).strftime("%H:%M")
             linhas.append(f"{h} {apelido(j['fav']).title()} {pt(j['odd_fav'])} v {apelido(j['dog']).title()} {pt(j['odd_dog'])} → <b>{alvo}</b>")
-        cab = f"📋 <b>Lista de ténis {lista.get('data','')}</b> ({len(lista['jogos'])} jogos, horas UTC)\nNúmero a negrito = odd mínima do não favorito se o favorito perder o 1.º set.\n\n"
+        cab = f"📋 <b>Lista de ténis {lista.get('data','')}</b> ({len(lista['jogos'])} jogos, horas UTC)\nNúmero a negrito = odd mínima do não favorito se o favorito perder o 1.º set. Também recebes aviso no início do 3.º set (sets 1-1).\n\n"
         txt = cab
         for l in linhas:
             if len(txt) + len(l) > 3800:
@@ -179,30 +188,45 @@ def main():
             if not g or len(g) != 2 or len(g[0]) < 2:
                 continue  # 1.º set ainda a decorrer (ou marcador indisponível)
             fav_e_p1 = mesmo(j["fav"], m["players"]["p1"]["name"])
-            gf, gd = (g[0][0], g[1][0]) if fav_e_p1 else (g[1][0], g[0][0])
+            F, Dg = (g[0], g[1]) if fav_e_p1 else (g[1], g[0])
             e = est["jogos"].setdefault(chave, {})
-            e["fim"] = True
-            if gf > gd:
-                log.info("%s ganhou o 1.º set %d-%d (sem alerta).", j["fav"], gf, gd)
-                continue
             fmt = m.get("format") or "BO3"
-            p = p_fav(j["odd_fav"], fmt)
-            s2f, s2d = (g[0][1], g[1][1]) if fav_e_p1 else (g[1][1], g[0][1])
-            if p is None:
-                txt_alvo = "Odd do favorito fora da tabela (sem odd alvo)."
-            else:
-                txt_alvo = (f"<b>{j['dog']}</b> só vale <b>acima de {pt(100 / (100 - p))}</b>\n"
+            fav_s1 = F[0] > Dg[0]
+            cab = (f"{j.get('torneio', m.get('tournament', ''))} · {fmt}\n"
+                   f"Pré-jogo Betano: {j['fav']} {pt(j['odd_fav'])} · {j['dog']} {pt(j['odd_dog'])}\n")
+            fim_txt = ("\n\nCompara com a odd ao vivo e confirma o marcador antes de apostar.\n"
+                       "<a href=\"https://www.betano.pt/live/\">Abrir Betano ao vivo</a>")
+            # Alerta 1: favorito perdeu o 1.º set
+            if not e.get("s1"):
+                e["s1"] = True
+                if not fav_s1:
+                    p = p_fav(j["odd_fav"], fmt)
+                    alvo = ("Odd do favorito fora da tabela." if p is None else
+                            f"<b>{j['dog']}</b> só vale <b>acima de {pt(100 / (100 - p))}</b>\n"
                             f"{j['fav']} só vale acima de {pt(100 / p)}")
-            texto = (f"🎾 <b>{j['fav']} perdeu o 1.º set</b> ({gf}-{gd})\n"
-                     f"{j.get('torneio', m.get('tournament', ''))} · {fmt}\n"
-                     f"Pré-jogo Betano: {j['fav']} {pt(j['odd_fav'])} · {j['dog']} {pt(j['odd_dog'])}\n"
-                     f"2.º set agora: {s2f}-{s2d} (favorito primeiro)\n\n"
-                     f"{txt_alvo}\n\n"
-                     f"Compara com a odd ao vivo e confirma o marcador antes de apostar.\n"
-                     f"<a href=\"https://www.betano.pt/live/\">Abrir Betano ao vivo</a>")
-            if telegram(texto):
-                e["alertado"] = agora.isoformat()
-                log.info("ALERTA: %s", chave)
+                    if telegram(f"🎾 <b>{j['fav']} perdeu o 1.º set</b> ({F[0]}-{Dg[0]})\n{cab}"
+                                f"2.º set agora: {F[1]}-{Dg[1]} (favorito primeiro)\n\n{alvo}{fim_txt}"):
+                        e["alertado_s1"] = agora.isoformat()
+                        log.info("ALERTA 1.º set: %s", chave)
+            # Alerta 2: sets 1-1, começou o 3.º set (só melhor de 3)
+            if fmt == "BO3" and len(F) >= 3 and not e.get("s3"):
+                e["s3"] = True
+                fav_s2 = F[1] > Dg[1]
+                if fav_s1 != fav_s2:
+                    p = p_fav_11(j["odd_fav"], fav_s1)
+                    hist = "ganhou o 1.º e perdeu o 2.º" if fav_s1 else "perdeu o 1.º e ganhou o 2.º"
+                    alvo = ("Odd do favorito fora da tabela." if p is None else
+                            f"<b>{j['fav']}</b> só vale <b>acima de {pt(100 / p)}</b>\n"
+                            f"<b>{j['dog']}</b> só vale <b>acima de {pt(100 / (100 - p))}</b>")
+                    if telegram(f"🎾 <b>3.º set: {j['fav']} v {j['dog']}</b>\n{cab}"
+                                f"Sets: {F[0]}-{Dg[0]}, {F[1]}-{Dg[1]} (favorito {hist})\n"
+                                f"3.º set agora: {F[2]}-{Dg[2]}\n\n{alvo}{fim_txt}"):
+                        e["alertado_s3"] = agora.isoformat()
+                        log.info("ALERTA 3.º set: %s", chave)
+            if e.get("s3") or fmt != "BO3" and e.get("s1"):
+                e["fim"] = True
+            elif len(F) >= 2 and ((F[0] > Dg[0]) == (F[1] > Dg[1])) and F[1] + Dg[1] >= 6 and abs(F[1] - Dg[1]) >= 2 and max(F[1], Dg[1]) >= 6:
+                e["fim"] = True  # 2-0: jogo acabou
         gravar(ESTADO, est)
         fim_janelas = max((datetime.fromisoformat(j["inicio_utc"].replace("Z", "+00:00")) + timedelta(hours=5)
                            for _, j in pendentes), default=agora)
