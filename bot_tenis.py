@@ -371,6 +371,10 @@ def main():
         ok = telegram(cfg, "✅ Bot de ténis ligado. Esta é uma mensagem de teste.")
         sys.exit(0 if ok else 1)
 
+    faltam = [n for n, k in (("ODDSPAPI_KEY", "oddspapi_key"), ("TELEGRAM_CHAT_ID", "telegram_chat_id"))
+              if not cfg.get(k) or str(cfg.get(k)).startswith(("A_TUA", "O_TEU"))]
+    if faltam:
+        sys.exit("Falta configurar: " + ", ".join(faltam) + " (segredos do repositório ou config.json).")
     api = OddsPapi(cfg["oddspapi_key"])
     mercado_p1 = descobrir_mercado_p1(api, cfg)
     estado = carregar_json(ESTADO_PATH, {})
