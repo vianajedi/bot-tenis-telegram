@@ -34,5 +34,11 @@ if h:
     except Exception as e:
         print("  (estrutura diferente:", e, ")")
 print("agora UTC:", datetime.now(timezone.utc).isoformat())
-for p in ("account", "usage", "me"):
-    get(p)
+a = get("account")
+def limpa(x):
+    if isinstance(x, dict):
+        return {k: ("<oculto>" if any(t in k.lower() for t in ("key","token","email","secret","password")) else limpa(v)) for k, v in x.items()}
+    if isinstance(x, list):
+        return [limpa(v) for v in x[:60]]
+    return x
+print("conta:", json.dumps(limpa(a), ensure_ascii=False)[:3000])
