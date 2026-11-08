@@ -1,0 +1,11 @@
+{
+  "oddspapi_key": "A_TUA_CHAVE_ODDSPAPI",
+  "telegram_token": "123456789:TOKEN_DO_BOTFATHER",
+  "telegram_chat_id": "O_TEU_CHAT_ID",
+  "intervalo_segundos": 60,
+  "margem_seguranca": 0.05,
+  "minutos_validos_apos_set1": 8,
+  "limite_odd_set1": 1.08,
+  "mercado_set1": "",
+  "link_fallback": "https://www.betano.pt/live/"
+}

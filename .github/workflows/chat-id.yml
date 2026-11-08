@@ -1,0 +1,25 @@
+name: Descobrir chat_id e testar Telegram
+
+on:
+  workflow_dispatch:
+
+jobs:
+  chatid:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install requests
+      - name: chat_id (envia antes "olá" ao bot no Telegram)
+        env:
+          TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
+        run: python bot_tenis.py --chatid
+      - name: Mensagem de teste (só funciona depois de criares o segredo TELEGRAM_CHAT_ID)
+        if: env.CHAT != ''
+        env:
+          CHAT: ${{ secrets.TELEGRAM_CHAT_ID }}
+          TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: python bot_tenis.py --teste
