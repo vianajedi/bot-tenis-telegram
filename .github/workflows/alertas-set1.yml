@@ -1,0 +1,41 @@
+name: Alertas 1.º set
+
+on:
+  schedule:
+    - cron: "41 * * * *"      # de hora a hora; só um de cada vez (concurrency)
+  workflow_dispatch:
+  push:
+    paths: ["lista_hoje.json"]   # arranca logo quando a lista do dia é atualizada
+
+concurrency:
+  group: alertas-set1
+  cancel-in-progress: false
+
+jobs:
+  alertas:
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install requests
+      - name: Restaurar estado
+        uses: actions/cache/restore@v4
+        with:
+          path: estado_set1.json
+          key: set1-${{ github.run_id }}
+          restore-keys: set1-
+      - name: Vigiar jogos da lista
+        env:
+          LIVETENNIS_KEY: ${{ secrets.LIVETENNIS_KEY }}
+          TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: python alertas_set1.py
+      - name: Guardar estado
+        if: always()
+        uses: actions/cache/save@v4
+        with:
+          path: estado_set1.json
+          key: set1-${{ github.run_id }}

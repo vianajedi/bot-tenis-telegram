@@ -1,4 +1,4 @@
-name: Diagnóstico OddsPapi
+name: Diagnóstico API
 
 on:
   workflow_dispatch:
@@ -14,5 +14,5 @@ jobs:
           python-version: "3.12"
       - run: pip install requests
       - env:
-          ODDSPAPI_KEY: ${{ secrets.ODDSPAPI_KEY }}
+          LIVETENNIS_KEY: ${{ secrets.LIVETENNIS_KEY }}
         run: python diagnostico.py

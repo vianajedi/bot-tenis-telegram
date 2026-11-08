@@ -1,21 +1,14 @@
-"""Diagnóstico: campos de jogos ao vivo e endpoint de resultados (sem a chave)."""
-import json, os
-from datetime import date, timedelta
-import requests
-B = "https://api.oddspapi.io/v4"; K = os.environ["ODDSPAPI_KEY"]
-def get(p, **kw):
-    kw["apiKey"] = K
-    r = requests.get(f"{B}/{p}", params=kw, timeout=30)
-    print(f"GET /{p} {{{', '.join(k for k in kw if k!='apiKey')}}} -> {r.status_code} | limites: " +
-          ", ".join(f"{h}={v}" for h, v in r.headers.items() if "limit" in h.lower() or "remaining" in h.lower()))
-    if not r.ok: print("   corpo:", r.text[:300]); return None
-    return r.json()
-fx = get("fixtures", sportId=12, **{"from": date.today().isoformat(), "to": (date.today()+timedelta(days=1)).isoformat()})
-fx = fx if isinstance(fx, list) else fx.get("data", fx)
-vivos = [f for f in fx if str(f.get("statusName", "")).lower() == "live"]
-print("ao vivo:", len(vivos))
-if vivos:
-    f = vivos[0]; print("fixture completo:", json.dumps(f)[:1500])
-    for p, kw in (("scores", {"fixtureId": f["fixtureId"]}), ("fixture", {"fixtureId": f["fixtureId"]}), ("livescores", {"sportId": 12})):
-        r = get(p, **kw)
-        if r is not None: print("  ", json.dumps(r)[:1500])
+"""Diagnóstico Live Tennis API: uso e jogos ao vivo (sem a chave)."""
+import json, os, requests
+B = "https://api.livetennisapi.com/api/public/v1"
+s = requests.Session(); s.headers["Authorization"] = f"Bearer {os.environ['LIVETENNIS_KEY']}"
+for p, kw in (("usage", {}), ("matches", {"status": "live", "draw": "singles", "limit": 200})):
+    r = s.get(f"{B}/{p}", params=kw, timeout=30)
+    print(f"GET /{p} -> {r.status_code} | restam {r.headers.get('X-RateLimit-Remaining')}")
+    if not r.ok: print("  ", r.text[:300]); continue
+    d = r.json()
+    if p == "usage": print("  ", json.dumps(d)[:500]); continue
+    print("   meta:", json.dumps(d.get("meta"))[:300])
+    for m in d.get("data", [])[:40]:
+        sc = (m.get("score") or {}).get("games")
+        print(f"   {m.get('tour')} | {m.get('tournament')} | {m['players']['p1']['name']} v {m['players']['p2']['name']} | {m.get('format')} | {sc}")

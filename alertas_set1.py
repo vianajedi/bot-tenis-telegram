@@ -1,0 +1,192 @@
+#!/usr/bin/env python3
+"""
+Alertas Telegram: favorito perdeu o 1.º set (ténis).
+
+- Lista do dia em lista_hoje.json (odds pré-jogo da Betano, preparada à parte).
+- Marcador ao vivo: Live Tennis API (plano grátis: 100 pedidos/dia).
+  Só consulta enquanto houver jogos da lista na janela de jogo; 1 pedido por ciclo.
+- Quando o favorito perde o 1.º set, envia a odd alvo de cada jogador
+  (odds justas históricas, tennis-data ATP+WTA 2023-2026).
+Não lê odds ao vivo e não faz apostas.
+"""
+import json, os, sys, time, unicodedata, logging
+from datetime import datetime, timedelta, timezone
+import requests
+
+API = "https://api.livetennisapi.com/api/public/v1"
+AQUI = os.path.dirname(os.path.abspath(__file__))
+LISTA = os.path.join(AQUI, "lista_hoje.json")
+LISTA_URL = os.environ.get("LISTA_URL", "https://raw.githubusercontent.com/vianajedi/bot-tenis-telegram/main/lista_hoje.json")
+ESTADO = os.path.join(AQUI, "estado_set1.json")
+LIMITE_DIA = int(os.environ.get("LIMITE_PEDIDOS_DIA", "90"))
+INTERVALO = int(os.environ.get("INTERVALO_SEGUNDOS", "300"))
+log = logging.getLogger("set1")
+
+# Probabilidade do favorito ganhar o jogo depois de PERDER o 1.º set (%)
+BANDAS = [(1.01, 1.15), (1.15, 1.30), (1.30, 1.45), (1.45, 1.60), (1.60, 1.80), (1.80, 2.10)]
+PERDEU = {"BO3": [57.7, 41.9, 32.9, 29.8, 25.6, 22.4], "BO5": [78.2, 55.6, 46.3, 34.9, 33.3, 28.9]}
+FINAS_BO3 = [(1.05, 1.10, 62.2), (1.10, 1.15, 54.5), (1.15, 1.20, 49.3), (1.20, 1.25, 44.5), (1.25, 1.30, 37.5)]
+
+
+def p_fav(odd, fmt):
+    if fmt != "BO5":
+        for a, b, p in FINAS_BO3:
+            if a <= odd < b:
+                return p
+    for i, (a, b) in enumerate(BANDAS):
+        if a <= odd < b:
+            return PERDEU.get(fmt, PERDEU["BO3"])[i]
+    return None
+
+
+def norm(s):
+    s = unicodedata.normalize("NFKD", s or "").encode("ascii", "ignore").decode().lower()
+    return " ".join(s.replace("-", " ").replace(".", " ").split())
+
+
+def apelido(nome):
+    return norm(nome).split()[-1] if norm(nome) else ""
+
+
+def mesmo(nome_lista, nome_api):
+    a, b = norm(nome_lista).split(), norm(nome_api).split()
+    return bool(a and b) and (a[-1] in b or b[-1] in a)
+
+
+def carregar(p, d):
+    try:
+        with open(p, encoding="utf-8") as f:
+            return json.load(f)
+    except (FileNotFoundError, json.JSONDecodeError):
+        return d
+
+
+def gravar(p, d):
+    with open(p, "w", encoding="utf-8") as f:
+        json.dump(d, f, ensure_ascii=False, indent=1)
+
+
+def ler_lista():
+    """Lê a lista mais recente do repositório (assim apanha atualizações sem reiniciar)."""
+    try:
+        r = requests.get(LISTA_URL, params={"t": int(time.time())}, timeout=20)
+        if r.ok:
+            return r.json()
+    except Exception as e:
+        log.warning("Lista remota indisponível: %s", e)
+    return carregar(LISTA, {"jogos": []})
+
+
+def telegram(txt):
+    r = requests.post(f"https://api.telegram.org/bot{os.environ['TELEGRAM_TOKEN']}/sendMessage", json={
+        "chat_id": os.environ["TELEGRAM_CHAT_ID"], "text": txt, "parse_mode": "HTML",
+        "disable_web_page_preview": True}, timeout=20)
+    if not r.ok:
+        log.error("Telegram: %s %s", r.status_code, r.text[:200])
+    return r.ok
+
+
+def pt(x):
+    return f"{x:.2f}".replace(".", ",")
+
+
+def main():
+    logging.basicConfig(level=logging.INFO, format="%(asctime)s %(message)s", stream=sys.stdout)
+    for v in ("LIVETENNIS_KEY", "TELEGRAM_TOKEN", "TELEGRAM_CHAT_ID"):
+        if not os.environ.get(v):
+            sys.exit(f"Falta o segredo {v}.")
+    duracao = float(os.environ.get("DURACAO_MIN", "345")) * 60
+    lista = ler_lista()
+    est = carregar(ESTADO, {})
+    hoje = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+    if est.get("dia") != hoje:
+        est = {"dia": hoje, "pedidos": 0, "jogos": est.get("jogos", {})}
+    s = requests.Session()
+    s.headers["Authorization"] = f"Bearer {os.environ['LIVETENNIS_KEY']}"
+    inicio = time.time()
+    log.info("Lista: %d jogos (%s). Pedidos hoje: %d/%d.", len(lista["jogos"]), lista.get("data"), est["pedidos"], LIMITE_DIA)
+
+    while time.time() - inicio < duracao:
+        agora = datetime.now(timezone.utc)
+        lista = ler_lista()
+        if agora.strftime("%Y-%m-%d") != est["dia"]:
+            est["dia"], est["pedidos"] = agora.strftime("%Y-%m-%d"), 0
+        pendentes = []
+        for j in lista["jogos"]:
+            chave = f"{j['fav']}|{j['dog']}"
+            if est["jogos"].get(chave, {}).get("fim"):
+                continue
+            h = datetime.fromisoformat(j["inicio_utc"].replace("Z", "+00:00"))
+            if h - timedelta(minutes=10) <= agora <= h + timedelta(hours=5):
+                pendentes.append((chave, j))
+        futuros = [j for j in lista["jogos"] if datetime.fromisoformat(j["inicio_utc"].replace("Z", "+00:00")) > agora
+                   and not est["jogos"].get(f"{j['fav']}|{j['dog']}", {}).get("fim")]
+        if not pendentes:
+            if not futuros:
+                log.info("Sem jogos pendentes na lista. A terminar.")
+                break
+            time.sleep(INTERVALO)
+            continue
+        if est["pedidos"] >= LIMITE_DIA:
+            log.info("Limite diário de pedidos atingido (%d). A terminar.", LIMITE_DIA)
+            break
+
+        try:
+            r = s.get(f"{API}/matches", params={"status": "live", "draw": "singles", "limit": 200}, timeout=30)
+            est["pedidos"] += 1
+            restam = r.headers.get("X-RateLimit-Remaining")
+            if r.status_code == 429:
+                log.warning("429 da API (limite). A terminar: %s", r.text[:200])
+                break
+            r.raise_for_status()
+            vivos = r.json().get("data", [])
+        except Exception as e:
+            log.warning("Erro na API: %s", e)
+            gravar(ESTADO, est)
+            time.sleep(INTERVALO)
+            continue
+        log.info("Jogos ao vivo: %d | pendentes da lista: %d | pedidos hoje %d (restam %s)",
+                 len(vivos), len(pendentes), est["pedidos"], restam)
+
+        for chave, j in pendentes:
+            m = next((x for x in vivos
+                      if (mesmo(j["fav"], x["players"]["p1"]["name"]) and mesmo(j["dog"], x["players"]["p2"]["name"]))
+                      or (mesmo(j["fav"], x["players"]["p2"]["name"]) and mesmo(j["dog"], x["players"]["p1"]["name"]))), None)
+            if not m:
+                continue
+            sc = m.get("score") or {}
+            g = sc.get("games")
+            if not g or len(g) != 2 or len(g[0]) < 2:
+                continue  # 1.º set ainda a decorrer (ou marcador indisponível)
+            fav_e_p1 = mesmo(j["fav"], m["players"]["p1"]["name"])
+            gf, gd = (g[0][0], g[1][0]) if fav_e_p1 else (g[1][0], g[0][0])
+            e = est["jogos"].setdefault(chave, {})
+            e["fim"] = True
+            if gf > gd:
+                log.info("%s ganhou o 1.º set %d-%d (sem alerta).", j["fav"], gf, gd)
+                continue
+            fmt = m.get("format") or "BO3"
+            p = p_fav(j["odd_fav"], fmt)
+            s2f, s2d = (g[0][1], g[1][1]) if fav_e_p1 else (g[1][1], g[0][1])
+            if p is None:
+                txt_alvo = "Odd do favorito fora da tabela (sem odd alvo)."
+            else:
+                txt_alvo = (f"<b>{j['dog']}</b> só vale <b>acima de {pt(100 / (100 - p))}</b>\n"
+                            f"{j['fav']} só vale acima de {pt(100 / p)}")
+            texto = (f"🎾 <b>{j['fav']} perdeu o 1.º set</b> ({gf}-{gd})\n"
+                     f"{j.get('torneio', m.get('tournament', ''))} · {fmt}\n"
+                     f"Pré-jogo Betano: {j['fav']} {pt(j['odd_fav'])} · {j['dog']} {pt(j['odd_dog'])}\n"
+                     f"2.º set agora: {s2f}-{s2d} (favorito primeiro)\n\n"
+                     f"{txt_alvo}\n\n"
+                     f"Compara com a odd ao vivo e confirma o marcador antes de apostar.\n"
+                     f"<a href=\"https://www.betano.pt/live/\">Abrir Betano ao vivo</a>")
+            if telegram(texto):
+                e["alertado"] = agora.isoformat()
+                log.info("ALERTA: %s", chave)
+        gravar(ESTADO, est)
+        time.sleep(INTERVALO)
+    gravar(ESTADO, est)
+
+
+if __name__ == "__main__":
+    main()
