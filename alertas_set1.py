@@ -9,7 +9,7 @@ Alertas Telegram: favorito perdeu o 1.º set (ténis).
   (odds justas históricas, tennis-data ATP+WTA 2023-2026).
 Não lê odds ao vivo e não faz apostas.
 """
-import json, os, sys, time, unicodedata, logging
+import json, os, re, subprocess, sys, time, unicodedata, logging
 from datetime import datetime, timedelta, timezone
 import requests
 
@@ -18,6 +18,9 @@ AQUI = os.path.dirname(os.path.abspath(__file__))
 LISTA = os.path.join(AQUI, "lista_hoje.json")
 LISTA_URL = os.environ.get("LISTA_URL", "https://raw.githubusercontent.com/vianajedi/bot-tenis-telegram/main/lista_hoje.json")
 ESTADO = os.path.join(AQUI, "estado_set1.json")
+CASOS = os.path.join(AQUI, "casos.json")
+MESES = ["jan", "fev", "mar", "abr", "mai", "jun", "jul", "ago", "set", "out", "nov", "dez"]
+CASAS = ["betano", "betclic", "solverde", "bwin", "placard", "esconline", "lebull", "goldenpark", "retabet"]
 LIMITE_DIA = int(os.environ.get("LIMITE_PEDIDOS_DIA", "90"))
 INTERVALO = int(os.environ.get("INTERVALO_SEGUNDOS", "300"))
 log = logging.getLogger("set1")
@@ -92,7 +95,88 @@ def telegram(txt):
         "disable_web_page_preview": True}, timeout=20)
     if not r.ok:
         log.error("Telegram: %s %s", r.status_code, r.text[:200])
-    return r.ok
+        return None
+    return r.json().get("result", {}).get("message_id") or True
+
+
+def git_push(msg):
+    """Grava casos.json no repositório (o GITHUB_TOKEN do workflow tem permissão de escrita)."""
+    if not os.environ.get("GITHUB_ACTIONS"):
+        return
+    try:
+        subprocess.run(["git", "config", "user.name", "bot-tenis"], cwd=AQUI, check=True)
+        subprocess.run(["git", "config", "user.email", "bot-tenis@users.noreply.github.com"], cwd=AQUI, check=True)
+        subprocess.run(["git", "add", "casos.json"], cwd=AQUI, check=True)
+        if subprocess.run(["git", "diff", "--cached", "--quiet"], cwd=AQUI).returncode == 0:
+            return
+        subprocess.run(["git", "commit", "-q", "-m", msg], cwd=AQUI, check=True)
+        for _ in range(3):
+            subprocess.run(["git", "pull", "-q", "--rebase"], cwd=AQUI)
+            if subprocess.run(["git", "push", "-q"], cwd=AQUI).returncode == 0:
+                return
+            time.sleep(5)
+        log.warning("Não consegui gravar casos.json no repositório.")
+    except Exception as ex:
+        log.warning("git: %s", ex)
+
+
+def guardar_caso(rec):
+    casos = carregar(CASOS, [])
+    casos.append(rec)
+    gravar(CASOS, casos[-200:])
+    git_push(f"Caso: {rec['fav']} v {rec['dog']} ({rec['momento']})")
+
+
+def processar_respostas(est):
+    """Respostas no Telegram a um alerta: odds ao vivo e/ou resultado.
+    Ex.: '3,10 1,40 betano' (favorito primeiro) ou 'ganhou Maxted'."""
+    try:
+        r = requests.get(f"https://api.telegram.org/bot{os.environ['TELEGRAM_TOKEN']}/getUpdates",
+                         params={"offset": est.get("tg_offset", 0), "timeout": 0}, timeout=20)
+        ups = r.json().get("result", []) if r.ok else []
+    except Exception as ex:
+        log.warning("getUpdates: %s", ex)
+        return
+    if not ups:
+        return
+    casos = carregar(CASOS, [])
+    mudou = False
+    for u in ups:
+        est["tg_offset"] = u["update_id"] + 1
+        m = u.get("message") or {}
+        ref = (m.get("reply_to_message") or {}).get("message_id")
+        txt = m.get("text") or ""
+        if str(m.get("chat", {}).get("id")) != str(os.environ["TELEGRAM_CHAT_ID"]) or not ref or not txt:
+            continue
+        c = next((x for x in casos if x.get("msg_id") == ref), None)
+        if not c:
+            continue
+        t = norm(txt)
+        nums = [float(x.replace(",", ".")) for x in re.findall(r"\d+[.,]\d+", txt)]
+        feito = []
+        if len(nums) >= 2:
+            c["liveFav"], c["liveDog"] = nums[0], nums[1]; feito.append("odds ao vivo")
+        elif len(nums) == 1:
+            if apelido(c["dog"]) in t and apelido(c["fav"]) not in t:
+                c["liveDog"] = nums[0]
+            else:
+                c["liveFav"] = nums[0]
+            feito.append("odd ao vivo")
+        casa = next((k for k in CASAS if k in t), None)
+        if casa:
+            c["casa"] = casa.capitalize()
+        if "ganh" in t or "venc" in t:
+            for nome in (c["fav"], c["dog"]):
+                if apelido(nome) in t:
+                    c["resultado"] = f"Ganhou {nome.split()[-1]}"; feito.append("resultado")
+        if feito:
+            mudou = True
+            telegram(f"✅ Registado ({', '.join(feito)}): {c['fav']} v {c['dog']}")
+        else:
+            telegram("Não percebi. Responde ao alerta com as odds (favorito primeiro), ex.: <code>3,10 1,40 betano</code>, ou com <code>ganhou Apelido</code>.")
+    if mudou:
+        gravar(CASOS, casos)
+        git_push("Casos: odds ao vivo/resultado")
 
 
 def pt(x):
@@ -133,6 +217,7 @@ def main():
 
     while time.time() - inicio < duracao:
         agora = datetime.now(timezone.utc)
+        processar_respostas(est)
         lista = ler_lista()
         if lista.get("jogos") and est.get("lista_avisada") != lista.get("data"):
             resumo(lista)
@@ -153,6 +238,7 @@ def main():
         if not pendentes:
             if not futuros:
                 log.info("Sem jogos pendentes na lista. A terminar.")
+                processar_respostas(est)
                 break
             time.sleep(INTERVALO)
             continue
@@ -194,6 +280,11 @@ def main():
             fav_s1 = F[0] > Dg[0]
             cab = (f"{j.get('torneio', m.get('tournament', ''))} · {fmt}\n"
                    f"Pré-jogo Betano: {j['fav']} {pt(j['odd_fav'])} · {j['dog']} {pt(j['odd_dog'])}\n")
+            resp_txt = ("\n\n↩️ Responde a esta mensagem com a odd ao vivo (favorito primeiro), "
+                        "ex.: <code>3,10 1,40 betano</code>. No fim: <code>ganhou Apelido</code>.")
+            base = {"data": f"{agora.day} {MESES[agora.month - 1]}", "torneio": j.get("torneio", m.get("tournament", "")),
+                    "fav": j["fav"], "oddFav": j["odd_fav"], "dog": j["dog"], "oddDog": j["odd_dog"], "ct": "all",
+                    "liveFav": None, "liveDog": None, "casa": "", "resultado": "por registar", "criado": agora.isoformat()}
             fim_txt = ("\n\nCompara com a odd ao vivo e confirma o marcador antes de apostar.\n"
                        "<a href=\"https://www.betano.pt/live/\">Abrir Betano ao vivo</a>")
             # Alerta 1: favorito perdeu o 1.º set
@@ -204,10 +295,13 @@ def main():
                     alvo = ("Odd do favorito fora da tabela." if p is None else
                             f"<b>{j['dog']}</b> só vale <b>acima de {pt(100 / (100 - p))}</b>\n"
                             f"{j['fav']} só vale acima de {pt(100 / p)}")
-                    if telegram(f"🎾 <b>{j['fav']} perdeu o 1.º set</b> ({F[0]}-{Dg[0]})\n{cab}"
-                                f"2.º set agora: {F[1]}-{Dg[1]} (favorito primeiro)\n\n{alvo}{fim_txt}"):
+                    mid = telegram(f"🎾 <b>{j['fav']} perdeu o 1.º set</b> ({F[0]}-{Dg[0]})\n{cab}"
+                                   f"2.º set agora: {F[1]}-{Dg[1]} (favorito primeiro)\n\n{alvo}{fim_txt}{resp_txt}")
+                    if mid:
                         e["alertado_s1"] = agora.isoformat()
                         log.info("ALERTA 1.º set: %s", chave)
+                        guardar_caso(dict(base, estado="dog", bo=fmt[-1], momento=f"2.º set {F[1]}-{Dg[1]} (1.º set {F[0]}-{Dg[0]})",
+                                          msg_id=mid if mid is not True else None))
             # Alerta 2: sets 1-1, começou o 3.º set (só melhor de 3)
             if fmt == "BO3" and len(F) >= 3 and not e.get("s3"):
                 e["s3"] = True
@@ -218,11 +312,15 @@ def main():
                     alvo = ("Odd do favorito fora da tabela." if p is None else
                             f"<b>{j['fav']}</b> só vale <b>acima de {pt(100 / p)}</b>\n"
                             f"<b>{j['dog']}</b> só vale <b>acima de {pt(100 / (100 - p))}</b>")
-                    if telegram(f"🎾 <b>3.º set: {j['fav']} v {j['dog']}</b>\n{cab}"
-                                f"Sets: {F[0]}-{Dg[0]}, {F[1]}-{Dg[1]} (favorito {hist})\n"
-                                f"3.º set agora: {F[2]}-{Dg[2]}\n\n{alvo}{fim_txt}"):
+                    mid = telegram(f"🎾 <b>3.º set: {j['fav']} v {j['dog']}</b>\n{cab}"
+                                   f"Sets: {F[0]}-{Dg[0]}, {F[1]}-{Dg[1]} (favorito {hist})\n"
+                                   f"3.º set agora: {F[2]}-{Dg[2]}\n\n{alvo}{fim_txt}{resp_txt}")
+                    if mid:
                         e["alertado_s3"] = agora.isoformat()
                         log.info("ALERTA 3.º set: %s", chave)
+                        guardar_caso(dict(base, estado="11a" if fav_s1 else "11b", bo="3",
+                                          momento=f"3.º set {F[2]}-{Dg[2]} ({F[0]}-{Dg[0]}, {F[1]}-{Dg[1]})",
+                                          msg_id=mid if mid is not True else None))
             if e.get("s3") or fmt != "BO3" and e.get("s1"):
                 e["fim"] = True
             elif len(F) >= 2 and ((F[0] > Dg[0]) == (F[1] > Dg[1])) and F[1] + Dg[1] >= 6 and abs(F[1] - Dg[1]) >= 2 and max(F[1], Dg[1]) >= 6:
