@@ -1,1 +1,20 @@
-[]
+[
+ {
+  "data": "9 nov",
+  "torneio": "ATP - Stockholm",
+  "fav": "Tomas Martin Etcheverry",
+  "oddFav": 1.27,
+  "dog": "Max Dahlin",
+  "oddDog": 3.7,
+  "ct": "all",
+  "liveFav": null,
+  "liveDog": null,
+  "casa": "",
+  "resultado": "por registar",
+  "criado": "2026-11-09T19:13:31.464701+00:00",
+  "estado": "11a",
+  "bo": "3",
+  "momento": "3.º set 1-1 (6-4, 6-7)",
+  "msg_id": 12
+ }
+]
