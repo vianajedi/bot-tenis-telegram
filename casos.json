@@ -196,5 +196,23 @@
   "bo": "3",
   "momento": "2.º set 5-4 (1.º set 6-7)",
   "msg_id": 23
+ },
+ {
+  "data": "10 nov",
+  "torneio": "Challenger - Knoxville",
+  "fav": "Darwin Blanch",
+  "oddFav": 1.31,
+  "dog": "Alastair Gray",
+  "oddDog": 2.82,
+  "ct": "all",
+  "liveFav": null,
+  "liveDog": null,
+  "casa": "",
+  "resultado": "por registar",
+  "criado": "2026-11-10T18:17:01.870142+00:00",
+  "estado": "dog",
+  "bo": "3",
+  "momento": "2.º set 3-5 (1.º set 3-6)",
+  "msg_id": 24
  }
 ]
