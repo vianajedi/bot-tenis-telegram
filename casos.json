@@ -430,5 +430,23 @@
   "bo": "3",
   "momento": "2.º set 0-0 (1.º set 2-6)",
   "msg_id": 36
+ },
+ {
+  "data": "10 nov",
+  "torneio": "WTA Finals - WTA Finals (F)",
+  "fav": "Coco Gauff",
+  "oddFav": 1.52,
+  "dog": "Linda Noskova",
+  "oddDog": 2.47,
+  "ct": "all",
+  "liveFav": null,
+  "liveDog": null,
+  "casa": "",
+  "resultado": "por registar",
+  "criado": "2026-11-10T22:53:14.770561+00:00",
+  "estado": "dog",
+  "bo": "3",
+  "momento": "2.º set 0-0 (1.º set 3-6)",
+  "msg_id": 37
  }
 ]
