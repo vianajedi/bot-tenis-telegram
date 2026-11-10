@@ -376,5 +376,23 @@
   "bo": "3",
   "momento": "2.º set 0-2 (1.º set 2-6)",
   "msg_id": 33
+ },
+ {
+  "data": "10 nov",
+  "torneio": "Challenger - Lima",
+  "fav": "Francisco Comesana",
+  "oddFav": 1.6,
+  "dog": "Marco Cecchinato",
+  "oddDog": 2.0,
+  "ct": "all",
+  "liveFav": null,
+  "liveDog": null,
+  "casa": "",
+  "resultado": "por registar",
+  "criado": "2026-11-10T21:02:50.784619+00:00",
+  "estado": "11b",
+  "bo": "3",
+  "momento": "3.º set 0-0 (4-6, 6-1)",
+  "msg_id": 34
  }
 ]
