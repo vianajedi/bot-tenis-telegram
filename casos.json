@@ -448,5 +448,23 @@
   "bo": "3",
   "momento": "2.º set 0-0 (1.º set 3-6)",
   "msg_id": 37
+ },
+ {
+  "data": "10 nov",
+  "torneio": "Challenger - Knoxville",
+  "fav": "Michael Zheng",
+  "oddFav": 1.18,
+  "dog": "Giles Hussey",
+  "oddDog": 3.7,
+  "ct": "all",
+  "liveFav": null,
+  "liveDog": null,
+  "casa": "",
+  "resultado": "por registar",
+  "criado": "2026-11-10T23:18:24.143802+00:00",
+  "estado": "11b",
+  "bo": "3",
+  "momento": "3.º set 0-0 (2-6, 6-4)",
+  "msg_id": 38
  }
 ]
