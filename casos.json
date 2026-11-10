@@ -178,5 +178,23 @@
   "bo": "3",
   "momento": "3.º set 0-1 (6-7, 6-3)",
   "msg_id": 22
+ },
+ {
+  "data": "10 nov",
+  "torneio": "Challenger - Lima",
+  "fav": "Nicolas Jarry",
+  "oddFav": 1.65,
+  "dog": "Nikolas Sanchez Izquierdo",
+  "oddDog": 1.95,
+  "ct": "all",
+  "liveFav": null,
+  "liveDog": null,
+  "casa": "",
+  "resultado": "por registar",
+  "criado": "2026-11-10T18:17:01.870142+00:00",
+  "estado": "dog",
+  "bo": "3",
+  "momento": "2.º set 5-4 (1.º set 6-7)",
+  "msg_id": 23
  }
 ]
