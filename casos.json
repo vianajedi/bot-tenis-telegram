@@ -340,5 +340,23 @@
   "bo": "3",
   "momento": "2.º set 1-0 (1.º set 4-6)",
   "msg_id": 31
+ },
+ {
+  "data": "10 nov",
+  "torneio": "Challenger - Lima",
+  "fav": "Elmer Moller",
+  "oddFav": 1.4,
+  "dog": "Genaro Alberto Olivieri",
+  "oddDog": 2.45,
+  "ct": "all",
+  "liveFav": null,
+  "liveDog": null,
+  "casa": "",
+  "resultado": "por registar",
+  "criado": "2026-11-10T20:47:44.675445+00:00",
+  "estado": "11b",
+  "bo": "3",
+  "momento": "3.º set 0-0 (4-6, 6-2)",
+  "msg_id": 32
  }
 ]
