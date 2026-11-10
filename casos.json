@@ -232,5 +232,23 @@
   "bo": "3",
   "momento": "3.º set 0-0 (6-7, 6-4)",
   "msg_id": 25
+ },
+ {
+  "data": "10 nov",
+  "torneio": "Challenger - Knoxville",
+  "fav": "Timo Legout",
+  "oddFav": 1.3,
+  "dog": "Petr Nesterov",
+  "oddDog": 2.82,
+  "ct": "all",
+  "liveFav": null,
+  "liveDog": null,
+  "casa": "",
+  "resultado": "por registar",
+  "criado": "2026-11-10T18:27:10.420364+00:00",
+  "estado": "dog",
+  "bo": "3",
+  "momento": "2.º set 0-0 (1.º set 2-6)",
+  "msg_id": 26
  }
 ]
