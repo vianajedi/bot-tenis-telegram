@@ -52,5 +52,23 @@
   "bo": "3",
   "momento": "2.º set 0-0 (1.º set 4-6)",
   "msg_id": 15
+ },
+ {
+  "data": "10 nov",
+  "torneio": "ATP - Stockholm",
+  "fav": "Arthur Rinderknech",
+  "oddFav": 1.47,
+  "dog": "Miomir Kecmanovic",
+  "oddDog": 2.6,
+  "ct": "all",
+  "liveFav": null,
+  "liveDog": null,
+  "casa": "",
+  "resultado": "por registar",
+  "criado": "2026-11-10T15:42:52.865968+00:00",
+  "estado": "dog",
+  "bo": "3",
+  "momento": "2.º set 0-0 (1.º set 6-7)",
+  "msg_id": 16
  }
 ]
