@@ -358,5 +358,23 @@
   "bo": "3",
   "momento": "3.º set 0-0 (4-6, 6-2)",
   "msg_id": 32
+ },
+ {
+  "data": "10 nov",
+  "torneio": "Challenger - Knoxville",
+  "fav": "Aidan Mayo",
+  "oddFav": 1.7,
+  "dog": "Michael Mmoh",
+  "oddDog": 1.88,
+  "ct": "all",
+  "liveFav": null,
+  "liveDog": null,
+  "casa": "",
+  "resultado": "por registar",
+  "criado": "2026-11-10T20:57:48.077422+00:00",
+  "estado": "dog",
+  "bo": "3",
+  "momento": "2.º set 0-2 (1.º set 2-6)",
+  "msg_id": 33
  }
 ]
