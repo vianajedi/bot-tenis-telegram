@@ -70,5 +70,23 @@
   "bo": "3",
   "momento": "2.º set 0-0 (1.º set 6-7)",
   "msg_id": 16
+ },
+ {
+  "data": "10 nov",
+  "torneio": "Challenger - Lima",
+  "fav": "Juan Carlos Prado Angelo",
+  "oddFav": 1.24,
+  "dog": "Ryo Tabata",
+  "oddDog": 3.15,
+  "ct": "all",
+  "liveFav": null,
+  "liveDog": null,
+  "casa": "",
+  "resultado": "por registar",
+  "criado": "2026-11-10T15:52:09.332606+00:00",
+  "estado": "dog",
+  "bo": "3",
+  "momento": "2.º set 0-0 (1.º set 3-6)",
+  "msg_id": 17
  }
 ]
