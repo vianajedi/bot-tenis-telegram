@@ -16,5 +16,23 @@
   "bo": "3",
   "momento": "3.º set 1-1 (6-4, 6-7)",
   "msg_id": 12
+ },
+ {
+  "data": "10 nov",
+  "torneio": "ATP - Stockholm",
+  "fav": "Adrian Mannarino",
+  "oddFav": 1.72,
+  "dog": "Alexander Shevchenko",
+  "oddDog": 2.1,
+  "ct": "all",
+  "liveFav": null,
+  "liveDog": null,
+  "casa": "",
+  "resultado": "por registar",
+  "criado": "2026-11-10T12:38:30.550224+00:00",
+  "estado": "dog",
+  "bo": "3",
+  "momento": "2.º set 0-1 (1.º set 1-6)",
+  "msg_id": 14
  }
 ]
