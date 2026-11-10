@@ -160,5 +160,23 @@
   "bo": "3",
   "momento": "3.º set 0-0 (6-7, 6-3)",
   "msg_id": 21
+ },
+ {
+  "data": "10 nov",
+  "torneio": "Challenger - Knoxville",
+  "fav": "Lui Maxted",
+  "oddFav": 1.78,
+  "dog": "Hynek Barton",
+  "oddDog": 1.8,
+  "ct": "all",
+  "liveFav": null,
+  "liveDog": null,
+  "casa": "",
+  "resultado": "por registar",
+  "criado": "2026-11-10T17:06:06.214889+00:00",
+  "estado": "11b",
+  "bo": "3",
+  "momento": "3.º set 0-1 (6-7, 6-3)",
+  "msg_id": 22
  }
 ]
