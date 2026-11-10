@@ -250,5 +250,23 @@
   "bo": "3",
   "momento": "2.º set 0-0 (1.º set 2-6)",
   "msg_id": 26
+ },
+ {
+  "data": "10 nov",
+  "torneio": "Challenger - Knoxville",
+  "fav": "Murphy Cassone",
+  "oddFav": 1.75,
+  "dog": "Daniel Milavsky",
+  "oddDog": 1.82,
+  "ct": "all",
+  "liveFav": null,
+  "liveDog": null,
+  "casa": "",
+  "resultado": "por registar",
+  "criado": "2026-11-10T18:52:16.332994+00:00",
+  "estado": "dog",
+  "bo": "3",
+  "momento": "2.º set 0-0 (1.º set 1-6)",
+  "msg_id": 27
  }
 ]
