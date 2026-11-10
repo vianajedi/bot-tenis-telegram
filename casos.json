@@ -142,5 +142,23 @@
   "bo": "3",
   "momento": "2.º set 1-0 (1.º set 6-7)",
   "msg_id": 20
+ },
+ {
+  "data": "10 nov",
+  "torneio": "Challenger - Lima",
+  "fav": "Daniel Rincon",
+  "oddFav": 1.15,
+  "dog": "Santiago De La Fuente",
+  "oddDog": 4.05,
+  "ct": "all",
+  "liveFav": null,
+  "liveDog": null,
+  "casa": "",
+  "resultado": "por registar",
+  "criado": "2026-11-10T16:56:52.814348+00:00",
+  "estado": "11b",
+  "bo": "3",
+  "momento": "3.º set 0-0 (6-7, 6-3)",
+  "msg_id": 21
  }
 ]
