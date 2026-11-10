@@ -286,5 +286,23 @@
   "bo": "3",
   "momento": "3.º set 0-0 (2-6, 6-2)",
   "msg_id": 28
+ },
+ {
+  "data": "10 nov",
+  "torneio": "Challenger - Lima",
+  "fav": "Oriol Roca Batalla",
+  "oddFav": 1.13,
+  "dog": "Alan Magadan",
+  "oddDog": 4.3,
+  "ct": "all",
+  "liveFav": null,
+  "liveDog": null,
+  "casa": "",
+  "resultado": "por registar",
+  "criado": "2026-11-10T19:52:29.756766+00:00",
+  "estado": "11a",
+  "bo": "3",
+  "momento": "3.º set 0-0 (6-3, 3-6)",
+  "msg_id": 29
  }
 ]
