@@ -484,5 +484,23 @@
   "bo": "3",
   "momento": "3.º set 0-0 (6-4, 3-6)",
   "msg_id": 40
+ },
+ {
+  "data": "11 nov",
+  "torneio": "Challenger - Knoxville",
+  "fav": "Marcos Giron",
+  "oddFav": 1.5,
+  "dog": "Maks Kasnikowski",
+  "oddDog": 2.22,
+  "ct": "all",
+  "liveFav": null,
+  "liveDog": null,
+  "casa": "",
+  "resultado": "por registar",
+  "criado": "2026-11-11T02:09:04.899555+00:00",
+  "estado": "11a",
+  "bo": "3",
+  "momento": "3.º set 1-0 (7-6, 2-6)",
+  "msg_id": 41
  }
 ]
