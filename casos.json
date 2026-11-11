@@ -592,5 +592,23 @@
   "bo": "3",
   "momento": "3.º set 1-1 (6-3, 6-7)",
   "msg_id": 47
+ },
+ {
+  "data": "11 nov",
+  "torneio": "ATP - Stockholm",
+  "fav": "Casper Ruud",
+  "oddFav": 1.23,
+  "dog": "Alexander Shevchenko",
+  "oddDog": 4.05,
+  "ct": "all",
+  "liveFav": null,
+  "liveDog": null,
+  "casa": "",
+  "resultado": "por registar",
+  "criado": "2026-11-11T18:56:33.262211+00:00",
+  "estado": "11a",
+  "bo": "3",
+  "momento": "3.º set 0-1 (7-6, 4-6)",
+  "msg_id": 48
  }
 ]
