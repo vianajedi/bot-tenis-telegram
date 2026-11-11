@@ -502,5 +502,23 @@
   "bo": "3",
   "momento": "3.º set 1-0 (7-6, 2-6)",
   "msg_id": 41
+ },
+ {
+  "data": "11 nov",
+  "torneio": "Challenger - Lima",
+  "fav": "Gonzalo Bueno",
+  "oddFav": 1.35,
+  "dog": "Carlos Sanchez Jover",
+  "oddDog": 2.62,
+  "ct": "all",
+  "liveFav": null,
+  "liveDog": null,
+  "casa": "",
+  "resultado": "por registar",
+  "criado": "2026-11-11T02:39:11.251663+00:00",
+  "estado": "11a",
+  "bo": "3",
+  "momento": "3.º set 0-0 (6-0, 2-6)",
+  "msg_id": 42
  }
 ]
