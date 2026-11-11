@@ -556,5 +556,23 @@
   "bo": "3",
   "momento": "3.º set 0-0 (4-6, 6-4)",
   "msg_id": 45
+ },
+ {
+  "data": "11 nov",
+  "torneio": "ATP - Stockholm",
+  "fav": "Lorenzo Sonego",
+  "oddFav": 1.6,
+  "dog": "Alejandro Tabilo",
+  "oddDog": 2.3,
+  "ct": "all",
+  "liveFav": null,
+  "liveDog": null,
+  "casa": "",
+  "resultado": "por registar",
+  "criado": "2026-11-11T13:18:28.503163+00:00",
+  "estado": "dog",
+  "bo": "3",
+  "momento": "2.º set 1-0 (1.º set 6-7)",
+  "msg_id": 46
  }
 ]
