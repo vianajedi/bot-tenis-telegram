@@ -520,5 +520,23 @@
   "bo": "3",
   "momento": "3.º set 0-0 (6-0, 2-6)",
   "msg_id": 42
+ },
+ {
+  "data": "11 nov",
+  "torneio": "Challenger - Orleans",
+  "fav": "Jurij Rodionov",
+  "oddFav": 1.27,
+  "dog": "Pedro Martinez Portero",
+  "oddDog": 3.0,
+  "ct": "all",
+  "liveFav": null,
+  "liveDog": null,
+  "casa": "",
+  "resultado": "por registar",
+  "criado": "2026-11-11T11:07:06.158917+00:00",
+  "estado": "dog",
+  "bo": "3",
+  "momento": "2.º set 0-0 (1.º set 4-6)",
+  "msg_id": 44
  }
 ]
