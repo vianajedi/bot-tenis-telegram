@@ -682,5 +682,23 @@
   "bo": "3",
   "momento": "2.º set 0-0 (1.º set 6-7)",
   "msg_id": 52
+ },
+ {
+  "data": "11 nov",
+  "torneio": "Challenger - Orleans",
+  "fav": "Mattia Bellucci",
+  "oddFav": 1.37,
+  "dog": "Sascha Gueymard Wayenburg",
+  "oddDog": 2.57,
+  "ct": "all",
+  "liveFav": null,
+  "liveDog": null,
+  "casa": "",
+  "resultado": "por registar",
+  "criado": "2026-11-11T23:12:31.030569+00:00",
+  "estado": "11b",
+  "bo": "3",
+  "momento": "3.º set 0-0 (6-7, 6-3)",
+  "msg_id": 53
  }
 ]
