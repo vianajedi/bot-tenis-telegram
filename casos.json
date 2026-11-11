@@ -628,5 +628,23 @@
   "bo": "3",
   "momento": "2.º set 1-1 (1.º set 2-6)",
   "msg_id": 49
+ },
+ {
+  "data": "11 nov",
+  "torneio": "ATP - Stockholm",
+  "fav": "Holger Rune",
+  "oddFav": 1.38,
+  "dog": "Miomir Kecmanovic",
+  "oddDog": 3.0,
+  "ct": "all",
+  "liveFav": null,
+  "liveDog": null,
+  "casa": "",
+  "resultado": "por registar",
+  "criado": "2026-11-11T20:41:46.593033+00:00",
+  "estado": "11b",
+  "bo": "3",
+  "momento": "3.º set 2-0 (2-6, 6-1)",
+  "msg_id": 50
  }
 ]
