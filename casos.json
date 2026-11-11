@@ -646,5 +646,23 @@
   "bo": "3",
   "momento": "3.º set 2-0 (2-6, 6-1)",
   "msg_id": 50
+ },
+ {
+  "data": "11 nov",
+  "torneio": "Challenger - Orleans",
+  "fav": "Benjamin Bonzi",
+  "oddFav": 1.18,
+  "dog": "Tom Gentzsch",
+  "oddDog": 3.7,
+  "ct": "all",
+  "liveFav": null,
+  "liveDog": null,
+  "casa": "",
+  "resultado": "por registar",
+  "criado": "2026-11-11T20:53:29.284820+00:00",
+  "estado": "dog",
+  "bo": "3",
+  "momento": "2.º set 0-0 (1.º set 4-6)",
+  "msg_id": 51
  }
 ]
