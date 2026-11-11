@@ -574,5 +574,23 @@
   "bo": "3",
   "momento": "2.º set 1-0 (1.º set 6-7)",
   "msg_id": 46
+ },
+ {
+  "data": "11 nov",
+  "torneio": "Challenger - Orleans",
+  "fav": "Hugo Gaston",
+  "oddFav": 1.47,
+  "dog": "Matteo Martineau",
+  "oddDog": 2.27,
+  "ct": "all",
+  "liveFav": null,
+  "liveDog": null,
+  "casa": "",
+  "resultado": "por registar",
+  "criado": "2026-11-11T16:59:33.564961+00:00",
+  "estado": "11a",
+  "bo": "3",
+  "momento": "3.º set 1-1 (6-3, 6-7)",
+  "msg_id": 47
  }
 ]
