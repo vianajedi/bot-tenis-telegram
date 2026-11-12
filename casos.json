@@ -754,5 +754,23 @@
   "bo": "3",
   "momento": "2.º set 1-0 (1.º set 3-6)",
   "msg_id": 61
+ },
+ {
+  "data": "12 nov",
+  "torneio": "Challenger - Orleans",
+  "fav": "Nishesh Basavareddy",
+  "oddFav": 1.57,
+  "dog": "Kyrian Jacquet",
+  "oddDog": 2.05,
+  "ct": "all",
+  "liveFav": null,
+  "liveDog": null,
+  "casa": "",
+  "resultado": "por registar",
+  "criado": "2026-11-12T21:09:14.382233+00:00",
+  "estado": "11b",
+  "bo": "3",
+  "momento": "3.º set 1-0 (3-6, 6-2)",
+  "msg_id": 62
  }
 ]
