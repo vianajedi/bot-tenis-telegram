@@ -790,5 +790,23 @@
   "bo": "3",
   "momento": "3.º set 0-1 (7-6, 3-6)",
   "msg_id": 63
+ },
+ {
+  "data": "12 nov",
+  "torneio": "Challenger - Knoxville",
+  "fav": "Marcos Giron",
+  "oddFav": 1.29,
+  "dog": "Abedallah Shelbayh",
+  "oddDog": 2.9,
+  "ct": "all",
+  "liveFav": null,
+  "liveDog": null,
+  "casa": "",
+  "resultado": "por registar",
+  "criado": "2026-11-12T22:41:49.341741+00:00",
+  "estado": "dog",
+  "bo": "3",
+  "momento": "2.º set 0-0 (1.º set 3-6)",
+  "msg_id": 64
  }
 ]
