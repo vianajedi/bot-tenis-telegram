@@ -772,5 +772,23 @@
   "bo": "3",
   "momento": "3.º set 1-0 (3-6, 6-2)",
   "msg_id": 62
+ },
+ {
+  "data": "12 nov",
+  "torneio": "ATP - Stockholm",
+  "fav": "Lorenzo Musetti",
+  "oddFav": 1.4,
+  "dog": "Ugo Humbert",
+  "oddDog": 2.87,
+  "ct": "all",
+  "liveFav": null,
+  "liveDog": null,
+  "casa": "",
+  "resultado": "por registar",
+  "criado": "2026-11-12T21:22:33.239015+00:00",
+  "estado": "11a",
+  "bo": "3",
+  "momento": "3.º set 0-1 (7-6, 3-6)",
+  "msg_id": 63
  }
 ]
