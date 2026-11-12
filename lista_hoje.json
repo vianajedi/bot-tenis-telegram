@@ -1,19 +1,20 @@
 {
- "data": "2026-11-11",
+ "data": "2026-11-12",
  "fonte": "Odds pré-jogo Betano PT lidas às 07:38 (Lisboa)",
  "jogos": [
-  {"inicio_utc": "2026-11-11T10:00:00Z", "torneio": "Challenger - Orleans", "fav": "Jurij Rodionov", "odd_fav": 1.27, "dog": "Pedro Martinez Portero", "odd_dog": 3.0},
-  {"inicio_utc": "2026-11-11T11:10:00Z", "torneio": "Challenger - Orleans", "fav": "Daniel Altmaier", "odd_fav": 1.36, "dog": "Buvaysar Gadamauri", "odd_dog": 2.6},
-  {"inicio_utc": "2026-11-11T12:00:00Z", "torneio": "ATP - Stockholm", "fav": "Lorenzo Sonego", "odd_fav": 1.6, "dog": "Alejandro Tabilo", "odd_dog": 2.3},
-  {"inicio_utc": "2026-11-11T12:30:00Z", "torneio": "Challenger - Orleans", "fav": "Hugo Gaston", "odd_fav": 1.47, "dog": "Matteo Martineau", "odd_dog": 2.27},
-  {"inicio_utc": "2026-11-11T13:30:00Z", "torneio": "ATP - Stockholm", "fav": "Taylor Fritz", "odd_fav": 1.28, "dog": "Cameron Norrie", "odd_dog": 3.6},
-  {"inicio_utc": "2026-11-11T13:40:00Z", "torneio": "Challenger - Orleans", "fav": "Clement Tabur", "odd_fav": 1.57, "dog": "Zsombor Piros", "odd_dog": 2.05},
-  {"inicio_utc": "2026-11-11T15:00:00Z", "torneio": "ATP - Stockholm", "fav": "Ugo Humbert", "odd_fav": 1.39, "dog": "Borna Gojo", "odd_dog": 2.95},
-  {"inicio_utc": "2026-11-11T17:00:00Z", "torneio": "ATP - Stockholm", "fav": "Casper Ruud", "odd_fav": 1.23, "dog": "Alexander Shevchenko", "odd_dog": 4.05},
-  {"inicio_utc": "2026-11-11T18:00:00Z", "torneio": "Challenger - Orleans", "fav": "Benjamin Bonzi", "odd_fav": 1.18, "dog": "Tom Gentzsch", "odd_dog": 3.7},
-  {"inicio_utc": "2026-11-11T18:10:00Z", "torneio": "ATP - Stockholm", "fav": "Holger Rune", "odd_fav": 1.38, "dog": "Miomir Kecmanovic", "odd_dog": 3.0},
-  {"inicio_utc": "2026-11-11T19:10:00Z", "torneio": "Challenger - Orleans", "fav": "Mattia Bellucci", "odd_fav": 1.37, "dog": "Sascha Gueymard Wayenburg", "odd_dog": 2.57},
-  {"inicio_utc": "2026-11-11T20:00:00Z", "torneio": "WTA Finals - WTA Finals (F)", "fav": "Karolina Muchova", "odd_fav": 1.62, "dog": "Elina Svitolina", "odd_dog": 2.25},
-  {"inicio_utc": "2026-11-11T21:10:00Z", "torneio": "WTA Finals - WTA Finals (F)", "fav": "Aryna Sabalenka", "odd_fav": 1.87, "dog": "Mirra Andreeva", "odd_dog": 1.9}
+  {"inicio_utc": "2026-11-12T12:00:00Z", "torneio": "ATP - Stockholm", "fav": "Alex Michelsen", "odd_fav": 1.23, "dog": "Alejandro Tabilo", "odd_dog": 4.1},
+  {"inicio_utc": "2026-11-12T12:30:00Z", "torneio": "Challenger - Orleans", "fav": "Otto Virtanen", "odd_fav": 1.57, "dog": "Dalibor Svrcina", "odd_dog": 2.05},
+  {"inicio_utc": "2026-11-12T13:40:00Z", "torneio": "Challenger - Orleans", "fav": "Matteo Martineau", "odd_fav": 1.5, "dog": "Pedro Martinez Portero", "odd_dog": 2.2},
+  {"inicio_utc": "2026-11-12T14:00:00Z", "torneio": "ATP - Stockholm", "fav": "Alexander Shevchenko", "odd_fav": 1.8, "dog": "Thiago Agustin Tirante", "odd_dog": 2.0},
+  {"inicio_utc": "2026-11-12T16:00:00Z", "torneio": "Challenger - Knoxville", "fav": "Michael Zheng", "odd_fav": 1.32, "dog": "Ozan Baris", "odd_dog": 2.75},
+  {"inicio_utc": "2026-11-12T17:10:00Z", "torneio": "Challenger - Knoxville", "fav": "Stefan Kozlov", "odd_fav": 1.36, "dog": "Braden Shick", "odd_dog": 2.6},
+  {"inicio_utc": "2026-11-12T17:30:00Z", "torneio": "ATP - Stockholm", "fav": "Taylor Fritz", "odd_fav": 1.45, "dog": "Holger Rune", "odd_dog": 2.7},
+  {"inicio_utc": "2026-11-12T18:00:00Z", "torneio": "Challenger - Orleans", "fav": "Sebastian Baez", "odd_fav": 1.28, "dog": "Calvin Hemery", "odd_dog": 2.95},
+  {"inicio_utc": "2026-11-12T18:20:00Z", "torneio": "Challenger - Knoxville", "fav": "Alastair Gray", "odd_fav": 1.27, "dog": "Filip Jeff Planinsek", "odd_dog": 3.0},
+  {"inicio_utc": "2026-11-12T18:40:00Z", "torneio": "ATP - Stockholm", "fav": "Lorenzo Musetti", "odd_fav": 1.4, "dog": "Ugo Humbert", "odd_dog": 2.87},
+  {"inicio_utc": "2026-11-12T19:10:00Z", "torneio": "Challenger - Orleans", "fav": "Nishesh Basavareddy", "odd_fav": 1.57, "dog": "Kyrian Jacquet", "odd_dog": 2.05},
+  {"inicio_utc": "2026-11-12T20:00:00Z", "torneio": "WTA Finals - WTA Finals (F)", "fav": "Coco Gauff", "odd_fav": 1.32, "dog": "Marta Kostyuk", "odd_dog": 3.3},
+  {"inicio_utc": "2026-11-12T21:10:00Z", "torneio": "WTA Finals - WTA Finals (F)", "fav": "Linda Noskova", "odd_fav": 1.82, "dog": "Jessica Pegula", "odd_dog": 1.95},
+  {"inicio_utc": "2026-11-12T22:00:00Z", "torneio": "Challenger - Knoxville", "fav": "Marcos Giron", "odd_fav": 1.29, "dog": "Abedallah Shelbayh", "odd_dog": 2.9}
  ]
 }
