@@ -898,5 +898,23 @@
   "bo": "3",
   "momento": "2.º set 0-0 (1.º set 3-6)",
   "msg_id": 70
+ },
+ {
+  "data": "13 nov",
+  "torneio": "WTA Finals - WTA Finals (F)",
+  "fav": "Aryna Sabalenka",
+  "oddFav": 1.5,
+  "dog": "Elina Svitolina",
+  "oddDog": 2.57,
+  "ct": "all",
+  "liveFav": null,
+  "liveDog": null,
+  "casa": "",
+  "resultado": "por registar",
+  "criado": "2026-11-13T22:14:32.883965+00:00",
+  "estado": "dog",
+  "bo": "3",
+  "momento": "2.º set 0-0 (1.º set 3-6)",
+  "msg_id": 71
  }
 ]
