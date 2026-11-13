@@ -844,5 +844,23 @@
   "bo": "3",
   "momento": "3.º set 0-1 (3-6, 6-3)",
   "msg_id": 66
+ },
+ {
+  "data": "13 nov",
+  "torneio": "WTA Finals - WTA Finals (F)",
+  "fav": "Linda Noskova",
+  "oddFav": 1.82,
+  "dog": "Jessica Pegula",
+  "oddDog": 1.95,
+  "ct": "all",
+  "liveFav": null,
+  "liveDog": null,
+  "casa": "",
+  "resultado": "por registar",
+  "criado": "2026-11-13T00:15:03.078308+00:00",
+  "estado": "11b",
+  "bo": "3",
+  "momento": "3.º set 0-0 (6-7, 6-4)",
+  "msg_id": 67
  }
 ]
