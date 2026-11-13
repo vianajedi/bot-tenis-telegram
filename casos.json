@@ -862,5 +862,23 @@
   "bo": "3",
   "momento": "3.º set 0-0 (6-7, 6-4)",
   "msg_id": 67
+ },
+ {
+  "data": "13 nov",
+  "torneio": "ATP - Stockholm",
+  "fav": "Alejandro Tabilo",
+  "oddFav": 1.65,
+  "dog": "Thiago Agustin Tirante",
+  "oddDog": 2.18,
+  "ct": "all",
+  "liveFav": null,
+  "liveDog": null,
+  "casa": "",
+  "resultado": "por registar",
+  "criado": "2026-11-13T14:11:43.432743+00:00",
+  "estado": "dog",
+  "bo": "3",
+  "momento": "2.º set 2-1 (1.º set 5-7)",
+  "msg_id": 69
  }
 ]
