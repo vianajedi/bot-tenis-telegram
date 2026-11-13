@@ -880,5 +880,23 @@
   "bo": "3",
   "momento": "2.º set 2-1 (1.º set 5-7)",
   "msg_id": 69
+ },
+ {
+  "data": "13 nov",
+  "torneio": "WTA - Sopo (F)",
+  "fav": "Laura Samson",
+  "oddFav": 1.42,
+  "dog": "Elizabeth Mandlik",
+  "oddDog": 2.72,
+  "ct": "all",
+  "liveFav": null,
+  "liveDog": null,
+  "casa": "",
+  "resultado": "por registar",
+  "criado": "2026-11-13T15:47:30.695650+00:00",
+  "estado": "dog",
+  "bo": "3",
+  "momento": "2.º set 0-0 (1.º set 3-6)",
+  "msg_id": 70
  }
 ]
