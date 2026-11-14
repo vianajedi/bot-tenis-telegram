@@ -934,5 +934,23 @@
   "bo": "3",
   "momento": "3.º set 0-0 (3-6, 6-3)",
   "msg_id": 72
+ },
+ {
+  "data": "14 nov",
+  "torneio": "ATP - Stockholm",
+  "fav": "Taylor Fritz",
+  "oddFav": 1.16,
+  "dog": "Thiago Agustin Tirante",
+  "oddDog": 5.1,
+  "ct": "all",
+  "liveFav": null,
+  "liveDog": null,
+  "casa": "",
+  "resultado": "por registar",
+  "criado": "2026-11-14T13:27:19.711313+00:00",
+  "estado": "11a",
+  "bo": "3",
+  "momento": "3.º set 0-0 (6-2, 4-6)",
+  "msg_id": 74
  }
 ]
