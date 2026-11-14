@@ -952,5 +952,23 @@
   "bo": "3",
   "momento": "3.º set 0-0 (6-2, 4-6)",
   "msg_id": 74
+ },
+ {
+  "data": "14 nov",
+  "torneio": "Challenger - Lima",
+  "fav": "Max Alcala Gurri",
+  "oddFav": 1.25,
+  "dog": "Franco Roncadelli",
+  "oddDog": 3.15,
+  "ct": "all",
+  "liveFav": null,
+  "liveDog": null,
+  "casa": "",
+  "resultado": "por registar",
+  "criado": "2026-11-14T20:03:49.076172+00:00",
+  "estado": "dog",
+  "bo": "3",
+  "momento": "2.º set 0-0 (1.º set 1-6)",
+  "msg_id": 75
  }
 ]
