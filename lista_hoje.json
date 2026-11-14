@@ -1,12 +1,38 @@
 {
- "data": "2026-11-13",
+ "data": "2026-11-14",
  "fonte": "Odds pré-jogo Betano PT lidas às 07:38 (Lisboa)",
  "jogos": [
-  {"inicio_utc": "2026-11-13T13:00:00Z", "torneio": "ATP - Stockholm", "fav": "Alejandro Tabilo", "odd_fav": 1.65, "dog": "Thiago Agustin Tirante", "odd_dog": 2.18},
-  {"inicio_utc": "2026-11-13T15:00:00Z", "torneio": "WTA - Sopo (F)", "fav": "Laura Samson", "odd_fav": 1.42, "dog": "Elizabeth Mandlik", "odd_dog": 2.72},
-  {"inicio_utc": "2026-11-13T16:00:00Z", "torneio": "ATP - Stockholm", "fav": "Taylor Fritz", "odd_fav": 1.62, "dog": "Lorenzo Musetti", "odd_dog": 2.27},
-  {"inicio_utc": "2026-11-13T16:10:00Z", "torneio": "WTA - Sopo (F)", "fav": "Bianca Andreescu", "odd_fav": 1.24, "dog": "Polona Hercog", "odd_dog": 3.75},
-  {"inicio_utc": "2026-11-13T20:00:00Z", "torneio": "WTA Finals - WTA Finals (F)", "fav": "Mirra Andreeva", "odd_fav": 1.33, "dog": "Karolina Muchova", "odd_dog": 3.25},
-  {"inicio_utc": "2026-11-13T21:10:00Z", "torneio": "WTA Finals - WTA Finals (F)", "fav": "Aryna Sabalenka", "odd_fav": 1.5, "dog": "Elina Svitolina", "odd_dog": 2.57}
+  {
+   "inicio_utc": "2026-11-14T12:00:00Z",
+   "torneio": "ATP - Stockholm",
+   "fav": "Taylor Fritz",
+   "odd_fav": 1.16,
+   "dog": "Thiago Agustin Tirante",
+   "odd_dog": 5.1
+  },
+  {
+   "inicio_utc": "2026-11-14T17:00:00Z",
+   "torneio": "WTA - Sopo (F)",
+   "fav": "Bianca Andreescu",
+   "odd_fav": 1.13,
+   "dog": "Elizabeth Mandlik",
+   "odd_dog": 5.2
+  },
+  {
+   "inicio_utc": "2026-11-14T19:00:00Z",
+   "torneio": "Challenger - Lima",
+   "fav": "Max Alcala Gurri",
+   "odd_fav": 1.25,
+   "dog": "Franco Roncadelli",
+   "odd_dog": 3.15
+  },
+  {
+   "inicio_utc": "2026-11-14T20:10:00Z",
+   "torneio": "Challenger - Lima",
+   "fav": "Joao Lucas Reis Da Silva",
+   "odd_fav": 1.65,
+   "dog": "Nikolas Sanchez Izquierdo",
+   "odd_dog": 1.95
+  }
  ]
 }
