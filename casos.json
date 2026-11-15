@@ -988,5 +988,23 @@
   "bo": "3",
   "momento": "2.º set 0-1 (1.º set 2-6)",
   "msg_id": 77
+ },
+ {
+  "data": "15 nov",
+  "torneio": "WTA - Colina - Qualificações (F)",
+  "fav": "Zhibek Kulambayeva",
+  "oddFav": 1.62,
+  "dog": "Valeriya Strakhova",
+  "oddDog": 2.12,
+  "ct": "all",
+  "liveFav": null,
+  "liveDog": null,
+  "casa": "",
+  "resultado": "por registar",
+  "criado": "2026-11-15T19:48:42.771617+00:00",
+  "estado": "dog",
+  "bo": "3",
+  "momento": "2.º set 0-0 (1.º set 5-7)",
+  "msg_id": 78
  }
 ]
