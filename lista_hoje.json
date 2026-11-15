@@ -1,38 +1,62 @@
 {
- "data": "2026-11-14",
+ "data": "2026-11-15",
  "fonte": "Odds pré-jogo Betano PT lidas às 07:38 (Lisboa)",
  "jogos": [
   {
-   "inicio_utc": "2026-11-14T12:00:00Z",
-   "torneio": "ATP - Stockholm",
-   "fav": "Taylor Fritz",
-   "odd_fav": 1.16,
-   "dog": "Thiago Agustin Tirante",
-   "odd_dog": 5.1
+   "inicio_utc": "2026-11-15T13:00:00Z",
+   "torneio": "ATP Finals - ATP Finals",
+   "fav": "Alexander Zverev",
+   "odd_fav": 1.37,
+   "dog": "Rafael Jodar",
+   "odd_dog": 3.05
   },
   {
-   "inicio_utc": "2026-11-14T17:00:00Z",
-   "torneio": "WTA - Sopo (F)",
-   "fav": "Bianca Andreescu",
-   "odd_fav": 1.13,
-   "dog": "Elizabeth Mandlik",
-   "odd_dog": 5.2
+   "inicio_utc": "2026-11-15T14:30:00Z",
+   "torneio": "WTA - Colina - Qualificações (F)",
+   "fav": "Diletta Cherubini",
+   "odd_fav": 1.09,
+   "dog": "Alexandra Osborne",
+   "odd_dog": 5.8
   },
   {
-   "inicio_utc": "2026-11-14T19:00:00Z",
-   "torneio": "Challenger - Lima",
-   "fav": "Max Alcala Gurri",
-   "odd_fav": 1.25,
-   "dog": "Franco Roncadelli",
-   "odd_dog": 3.15
+   "inicio_utc": "2026-11-15T15:00:00Z",
+   "torneio": "Challenger - Orleans",
+   "fav": "Nishesh Basavareddy",
+   "odd_fav": 1.7,
+   "dog": "Otto Virtanen",
+   "odd_dog": 1.88
   },
   {
-   "inicio_utc": "2026-11-14T20:10:00Z",
-   "torneio": "Challenger - Lima",
-   "fav": "Joao Lucas Reis Da Silva",
-   "odd_fav": 1.65,
-   "dog": "Nikolas Sanchez Izquierdo",
-   "odd_dog": 1.95
+   "inicio_utc": "2026-11-15T15:40:00Z",
+   "torneio": "WTA - Colina - Qualificações (F)",
+   "fav": "Geerlings Martinez Ariana",
+   "odd_fav": 1.05,
+   "dog": "Camila Rodero Contreras",
+   "odd_dog": 7.4
+  },
+  {
+   "inicio_utc": "2026-11-15T15:40:00Z",
+   "torneio": "WTA - Colina - Qualificações (F)",
+   "fav": "Zhibek Kulambayeva",
+   "odd_fav": 1.62,
+   "dog": "Valeriya Strakhova",
+   "odd_dog": 2.12
+  },
+  {
+   "inicio_utc": "2026-11-15T19:30:00Z",
+   "torneio": "ATP Finals - ATP Finals",
+   "fav": "Ben Shelton",
+   "odd_fav": 1.53,
+   "dog": "Arthur Fils",
+   "odd_dog": 2.47
+  },
+  {
+   "inicio_utc": "2026-11-15T20:00:00Z",
+   "torneio": "WTA Finals - WTA Finals (F)",
+   "fav": "Mirra Andreeva",
+   "odd_fav": 1.36,
+   "dog": "Elina Svitolina",
+   "odd_dog": 3.1
   }
  ]
 }
