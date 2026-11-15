@@ -970,5 +970,23 @@
   "bo": "3",
   "momento": "2.º set 0-0 (1.º set 1-6)",
   "msg_id": 75
+ },
+ {
+  "data": "15 nov",
+  "torneio": "Challenger - Orleans",
+  "fav": "Nishesh Basavareddy",
+  "oddFav": 1.7,
+  "dog": "Otto Virtanen",
+  "oddDog": 1.88,
+  "ct": "all",
+  "liveFav": null,
+  "liveDog": null,
+  "casa": "",
+  "resultado": "por registar",
+  "criado": "2026-11-15T16:24:59.367344+00:00",
+  "estado": "dog",
+  "bo": "3",
+  "momento": "2.º set 0-1 (1.º set 2-6)",
+  "msg_id": 77
  }
 ]
