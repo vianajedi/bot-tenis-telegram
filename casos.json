@@ -1006,5 +1006,23 @@
   "bo": "3",
   "momento": "2.º set 0-0 (1.º set 5-7)",
   "msg_id": 78
+ },
+ {
+  "data": "15 nov",
+  "torneio": "ATP Finals - ATP Finals",
+  "fav": "Ben Shelton",
+  "oddFav": 1.53,
+  "dog": "Arthur Fils",
+  "oddDog": 2.47,
+  "ct": "all",
+  "liveFav": null,
+  "liveDog": null,
+  "casa": "",
+  "resultado": "por registar",
+  "criado": "2026-11-15T21:09:03.978754+00:00",
+  "estado": "11a",
+  "bo": "3",
+  "momento": "3.º set 1-0 (6-2, 3-6)",
+  "msg_id": 79
  }
 ]
