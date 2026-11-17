@@ -1060,5 +1060,23 @@
   "bo": "3",
   "momento": "3.º set 2-1 (6-2, 3-6)",
   "msg_id": 83
+ },
+ {
+  "data": "17 nov",
+  "torneio": "WTA - Colina (F)",
+  "fav": "Veronika Erjavec",
+  "oddFav": 1.6,
+  "dog": "Maria Lourdes Carle",
+  "oddDog": 2.22,
+  "ct": "all",
+  "liveFav": null,
+  "liveDog": null,
+  "casa": "",
+  "resultado": "por registar",
+  "criado": "2026-11-17T19:36:02.198479+00:00",
+  "estado": "dog",
+  "bo": "3",
+  "momento": "2.º set 0-0 (1.º set 5-7)",
+  "msg_id": 84
  }
 ]
