@@ -1042,5 +1042,23 @@
   "bo": "3",
   "momento": "3.º set 1-0 (6-4, 2-6)",
   "msg_id": 82
+ },
+ {
+  "data": "17 nov",
+  "torneio": "Challenger - Montevideo",
+  "fav": "Juan Carlos Prado Angelo",
+  "oddFav": 1.53,
+  "dog": "Lautaro Midon",
+  "oddDog": 2.15,
+  "ct": "all",
+  "liveFav": null,
+  "liveDog": null,
+  "casa": "",
+  "resultado": "por registar",
+  "criado": "2026-11-17T18:41:16.736071+00:00",
+  "estado": "11a",
+  "bo": "3",
+  "momento": "3.º set 2-1 (6-2, 3-6)",
+  "msg_id": 83
  }
 ]
