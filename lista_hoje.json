@@ -1,62 +1,198 @@
 {
- "data": "2026-11-15",
+ "data": "2026-11-17",
  "fonte": "Odds pré-jogo Betano PT lidas às 07:38 (Lisboa)",
  "jogos": [
   {
-   "inicio_utc": "2026-11-15T13:00:00Z",
+   "inicio_utc": "2026-11-17T07:50:00Z",
+   "torneio": "Challenger - Kobe",
+   "fav": "Yi Zhou",
+   "odd_fav": 1.21,
+   "dog": "Takuya Kumasaka",
+   "odd_dog": 3.4
+  },
+  {
+   "inicio_utc": "2026-11-17T13:00:00Z",
    "torneio": "ATP Finals - ATP Finals",
-   "fav": "Alexander Zverev",
-   "odd_fav": 1.37,
-   "dog": "Rafael Jodar",
-   "odd_dog": 3.05
+   "fav": "Rafael Jodar",
+   "odd_fav": 1.87,
+   "dog": "Arthur Fils",
+   "odd_dog": 1.91
   },
   {
-   "inicio_utc": "2026-11-15T14:30:00Z",
-   "torneio": "WTA - Colina - Qualificações (F)",
-   "fav": "Diletta Cherubini",
-   "odd_fav": 1.09,
-   "dog": "Alexandra Osborne",
-   "odd_dog": 5.8
-  },
-  {
-   "inicio_utc": "2026-11-15T15:00:00Z",
-   "torneio": "Challenger - Orleans",
-   "fav": "Nishesh Basavareddy",
-   "odd_fav": 1.7,
-   "dog": "Otto Virtanen",
-   "odd_dog": 1.88
-  },
-  {
-   "inicio_utc": "2026-11-15T15:40:00Z",
-   "torneio": "WTA - Colina - Qualificações (F)",
-   "fav": "Geerlings Martinez Ariana",
-   "odd_fav": 1.05,
-   "dog": "Camila Rodero Contreras",
-   "odd_dog": 7.4
-  },
-  {
-   "inicio_utc": "2026-11-15T15:40:00Z",
-   "torneio": "WTA - Colina - Qualificações (F)",
-   "fav": "Zhibek Kulambayeva",
-   "odd_fav": 1.62,
-   "dog": "Valeriya Strakhova",
+   "inicio_utc": "2026-11-17T14:00:00Z",
+   "torneio": "WTA - Colina (F)",
+   "fav": "Irene Burillo Escorihuela",
+   "odd_fav": 1.65,
+   "dog": "Darja Semenistaja",
    "odd_dog": 2.12
   },
   {
-   "inicio_utc": "2026-11-15T19:30:00Z",
-   "torneio": "ATP Finals - ATP Finals",
-   "fav": "Ben Shelton",
-   "odd_fav": 1.53,
-   "dog": "Arthur Fils",
-   "odd_dog": 2.47
+   "inicio_utc": "2026-11-17T14:00:00Z",
+   "torneio": "WTA - Colina (F)",
+   "fav": "Nadia Podoroska",
+   "odd_fav": 1.47,
+   "dog": "Varvara Lepchenko",
+   "odd_dog": 2.52
   },
   {
-   "inicio_utc": "2026-11-15T20:00:00Z",
-   "torneio": "WTA Finals - WTA Finals (F)",
-   "fav": "Mirra Andreeva",
-   "odd_fav": 1.36,
-   "dog": "Elina Svitolina",
+   "inicio_utc": "2026-11-17T15:10:00Z",
+   "torneio": "WTA - Colina (F)",
+   "fav": "Lucia Bronzetti",
+   "odd_fav": 1.55,
+   "dog": "Alicia Herrero Linana",
+   "odd_dog": 2.35
+  },
+  {
+   "inicio_utc": "2026-11-17T15:10:00Z",
+   "torneio": "WTA - Colina (F)",
+   "fav": "Polona Hercog",
+   "odd_fav": 1.29,
+   "dog": "Miriam Bianca Bulgaru",
+   "odd_dog": 3.35
+  },
+  {
+   "inicio_utc": "2026-11-17T16:20:00Z",
+   "torneio": "WTA - Colina (F)",
+   "fav": "Veronika Erjavec",
+   "odd_fav": 1.6,
+   "dog": "Maria Lourdes Carle",
+   "odd_dog": 2.22
+  },
+  {
+   "inicio_utc": "2026-11-17T16:30:00Z",
+   "torneio": "Challenger - Montevideo",
+   "fav": "Juan Carlos Prado Angelo",
+   "odd_fav": 1.53,
+   "dog": "Lautaro Midon",
+   "odd_dog": 2.15
+  },
+  {
+   "inicio_utc": "2026-11-17T16:30:00Z",
+   "torneio": "Challenger - Montevideo",
+   "fav": "Alex Barrena",
+   "odd_fav": 1.39,
+   "dog": "Matias Soto",
+   "odd_dog": 2.5
+  },
+  {
+   "inicio_utc": "2026-11-17T16:30:00Z",
+   "torneio": "Challenger - Montevideo",
+   "fav": "Camilo Ugo Carabelli",
+   "odd_fav": 1.38,
+   "dog": "Felipe Meligeni Alves",
+   "odd_dog": 2.52
+  },
+  {
+   "inicio_utc": "2026-11-17T17:40:00Z",
+   "torneio": "Challenger - Montevideo",
+   "fav": "Henrique Rocha",
+   "odd_fav": 1.06,
+   "dog": "Federico Aguilar Cardozo",
+   "odd_dog": 5.6
+  },
+  {
+   "inicio_utc": "2026-11-17T17:40:00Z",
+   "torneio": "Challenger - Montevideo",
+   "fav": "Elmer Moller",
+   "odd_fav": 1.07,
+   "dog": "Thiago Cigarran",
+   "odd_dog": 5.5
+  },
+  {
+   "inicio_utc": "2026-11-17T17:40:00Z",
+   "torneio": "Challenger - Montevideo",
+   "fav": "Genaro Alberto Olivieri",
+   "odd_fav": 1.57,
+   "dog": "Gonzalo Villanueva",
+   "odd_dog": 2.05
+  },
+  {
+   "inicio_utc": "2026-11-17T18:50:00Z",
+   "torneio": "Challenger - Montevideo",
+   "fav": "Daniel Rincon",
+   "odd_fav": 1.6,
+   "dog": "Guido Ivan Justo",
+   "odd_dog": 2.0
+  },
+  {
+   "inicio_utc": "2026-11-17T18:50:00Z",
+   "torneio": "Challenger - Montevideo",
+   "fav": "Thiago Seyboth Wild",
+   "odd_fav": 1.21,
+   "dog": "Nicolas Kicker",
+   "odd_dog": 3.4
+  },
+  {
+   "inicio_utc": "2026-11-17T19:30:00Z",
+   "torneio": "ATP Finals - ATP Finals",
+   "fav": "Alexander Zverev",
+   "odd_fav": 1.44,
+   "dog": "Ben Shelton",
+   "odd_dog": 2.72
+  },
+  {
+   "inicio_utc": "2026-11-17T20:00:00Z",
+   "torneio": "WTA - Colina (F)",
+   "fav": "Laura Samson",
+   "odd_fav": 1.22,
+   "dog": "Despina Papamichail",
+   "odd_dog": 3.95
+  },
+  {
+   "inicio_utc": "2026-11-17T20:00:00Z",
+   "torneio": "Challenger - Montevideo",
+   "fav": "Valerio Aboian",
+   "odd_fav": 1.78,
+   "dog": "Zdenek Kolar",
+   "odd_dog": 1.8
+  },
+  {
+   "inicio_utc": "2026-11-17T20:00:00Z",
+   "torneio": "Challenger - Montevideo",
+   "fav": "Max Alcala Gurri",
+   "odd_fav": 1.45,
+   "dog": "Oriol Roca Batalla",
+   "odd_dog": 2.3
+  },
+  {
+   "inicio_utc": "2026-11-17T20:30:00Z",
+   "torneio": "WTA - Colina (F)",
+   "fav": "Andrea Lazaro Garcia",
+   "odd_fav": 1.33,
+   "dog": "Barbara Gatica",
    "odd_dog": 3.1
+  },
+  {
+   "inicio_utc": "2026-11-17T21:00:00Z",
+   "torneio": "Challenger - Montevideo",
+   "fav": "Joaquin Aguilar Cardozo",
+   "odd_fav": 1.5,
+   "dog": "Carlos Sanchez Jover",
+   "odd_dog": 2.2
+  },
+  {
+   "inicio_utc": "2026-11-17T21:10:00Z",
+   "torneio": "Challenger - Montevideo",
+   "fav": "Francisco Comesana",
+   "odd_fav": 1.55,
+   "dog": "Juan Manuel La Serna",
+   "odd_dog": 2.12
+  },
+  {
+   "inicio_utc": "2026-11-17T22:00:00Z",
+   "torneio": "WTA - Colina (F)",
+   "fav": "Antonia Vergara Rivera",
+   "odd_fav": 1.47,
+   "dog": "Fernanda Labrana",
+   "odd_dog": 2.55
+  },
+  {
+   "inicio_utc": "2026-11-17T23:00:00Z",
+   "torneio": "Challenger - Montevideo",
+   "fav": "Marcelo Tomas Barrios Vera",
+   "odd_fav": 1.35,
+   "dog": "Franco Roncadelli",
+   "odd_dog": 2.62
   }
  ]
 }
