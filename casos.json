@@ -1096,5 +1096,23 @@
   "bo": "3",
   "momento": "2.º set 1-2 (1.º set 3-6)",
   "msg_id": 85
+ },
+ {
+  "data": "17 nov",
+  "torneio": "Challenger - Montevideo",
+  "fav": "Joaquin Aguilar Cardozo",
+  "oddFav": 1.5,
+  "dog": "Carlos Sanchez Jover",
+  "oddDog": 2.2,
+  "ct": "all",
+  "liveFav": null,
+  "liveDog": null,
+  "casa": "",
+  "resultado": "por registar",
+  "criado": "2026-11-17T23:10:23.518745+00:00",
+  "estado": "11a",
+  "bo": "3",
+  "momento": "3.º set 0-0 (6-4, 6-7)",
+  "msg_id": 86
  }
 ]
