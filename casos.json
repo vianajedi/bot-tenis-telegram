@@ -1024,5 +1024,23 @@
   "bo": "3",
   "momento": "3.º set 1-0 (6-2, 3-6)",
   "msg_id": 79
+ },
+ {
+  "data": "17 nov",
+  "torneio": "ATP Finals - ATP Finals",
+  "fav": "Rafael Jodar",
+  "oddFav": 1.87,
+  "dog": "Arthur Fils",
+  "oddDog": 1.91,
+  "ct": "all",
+  "liveFav": null,
+  "liveDog": null,
+  "casa": "",
+  "resultado": "por registar",
+  "criado": "2026-11-17T14:40:51.127237+00:00",
+  "estado": "11a",
+  "bo": "3",
+  "momento": "3.º set 1-0 (6-4, 2-6)",
+  "msg_id": 82
  }
 ]
