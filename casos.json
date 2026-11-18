@@ -1384,5 +1384,23 @@
   "bo": "3",
   "momento": "3.º set 0-0 (3-6, 7-5)",
   "msg_id": 102
+ },
+ {
+  "data": "18 nov",
+  "torneio": "Challenger - Helsinki",
+  "fav": "James Duckworth",
+  "oddFav": 1.11,
+  "dog": "Eero Vasa",
+  "oddDog": 4.6,
+  "ct": "all",
+  "liveFav": null,
+  "liveDog": null,
+  "casa": "",
+  "resultado": "por registar",
+  "criado": "2026-11-18T16:46:30.513996+00:00",
+  "estado": "dog",
+  "bo": "3",
+  "momento": "2.º set 1-1 (1.º set 6-7)",
+  "msg_id": 103
  }
 ]
