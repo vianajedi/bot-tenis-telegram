@@ -1330,5 +1330,23 @@
   "bo": "3",
   "momento": "2.º set 0-3 (1.º set 6-7)",
   "msg_id": 99
+ },
+ {
+  "data": "18 nov",
+  "torneio": "Challenger - Helsinki",
+  "fav": "Jacob Fearnley",
+  "oddFav": 1.3,
+  "dog": "Laslo Djere",
+  "oddDog": 2.85,
+  "ct": "all",
+  "liveFav": null,
+  "liveDog": null,
+  "casa": "",
+  "resultado": "por registar",
+  "criado": "2026-11-18T14:21:41.310992+00:00",
+  "estado": "dog",
+  "bo": "3",
+  "momento": "2.º set 0-0 (1.º set 3-6)",
+  "msg_id": 100
  }
 ]
