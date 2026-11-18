@@ -1312,5 +1312,23 @@
   "bo": "3",
   "momento": "2.º set 0-1 (1.º set 3-6)",
   "msg_id": 98
+ },
+ {
+  "data": "18 nov",
+  "torneio": "Challenger - Helsinki",
+  "fav": "Jurij Rodionov",
+  "oddFav": 1.65,
+  "dog": "Nicolai Budkov Kjaer",
+  "oddDog": 1.93,
+  "ct": "all",
+  "liveFav": null,
+  "liveDog": null,
+  "casa": "",
+  "resultado": "por registar",
+  "criado": "2026-11-18T14:21:41.310992+00:00",
+  "estado": "dog",
+  "bo": "3",
+  "momento": "2.º set 0-3 (1.º set 6-7)",
+  "msg_id": 99
  }
 ]
