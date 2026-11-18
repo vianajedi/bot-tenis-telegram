@@ -1186,5 +1186,23 @@
   "bo": "3",
   "momento": "2.º set 0-0 (1.º set 1-6)",
   "msg_id": 90
+ },
+ {
+  "data": "18 nov",
+  "torneio": "Challenger - Montevideo",
+  "fav": "Marcelo Tomas Barrios Vera",
+  "oddFav": 1.35,
+  "dog": "Franco Roncadelli",
+  "oddDog": 2.62,
+  "ct": "all",
+  "liveFav": null,
+  "liveDog": null,
+  "casa": "",
+  "resultado": "por registar",
+  "criado": "2026-11-18T01:31:27.348921+00:00",
+  "estado": "dog",
+  "bo": "3",
+  "momento": "2.º set 0-0 (1.º set 3-6)",
+  "msg_id": 91
  }
 ]
