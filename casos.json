@@ -1150,5 +1150,23 @@
   "bo": "3",
   "momento": "2.º set 0-0 (1.º set 1-6)",
   "msg_id": 88
+ },
+ {
+  "data": "18 nov",
+  "torneio": "Challenger - Montevideo",
+  "fav": "Max Alcala Gurri",
+  "oddFav": 1.45,
+  "dog": "Oriol Roca Batalla",
+  "oddDog": 2.3,
+  "ct": "all",
+  "liveFav": null,
+  "liveDog": null,
+  "casa": "",
+  "resultado": "por registar",
+  "criado": "2026-11-18T00:31:12.670330+00:00",
+  "estado": "11b",
+  "bo": "3",
+  "momento": "3.º set 0-0 (1-6, 6-4)",
+  "msg_id": 89
  }
 ]
