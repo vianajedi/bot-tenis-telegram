@@ -1366,5 +1366,23 @@
   "bo": "3",
   "momento": "3.º set 0-2 (3-6, 6-1)",
   "msg_id": 101
+ },
+ {
+  "data": "18 nov",
+  "torneio": "Challenger - Helsinki",
+  "fav": "Edas Butvilas",
+  "oddFav": 1.5,
+  "dog": "Michele Ribecai",
+  "oddDog": 2.22,
+  "ct": "all",
+  "liveFav": null,
+  "liveDog": null,
+  "casa": "",
+  "resultado": "por registar",
+  "criado": "2026-11-18T15:16:06.400375+00:00",
+  "estado": "11b",
+  "bo": "3",
+  "momento": "3.º set 0-0 (3-6, 7-5)",
+  "msg_id": 102
  }
 ]
