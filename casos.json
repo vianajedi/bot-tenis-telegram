@@ -1276,5 +1276,23 @@
   "bo": "3",
   "momento": "3.º set 0-1 (4-6, 6-3)",
   "msg_id": 96
+ },
+ {
+  "data": "18 nov",
+  "torneio": "Challenger - Metz",
+  "fav": "Zsombor Piros",
+  "oddFav": 1.5,
+  "dog": "Alexandre Muller",
+  "oddDog": 2.22,
+  "ct": "all",
+  "liveFav": null,
+  "liveDog": null,
+  "casa": "",
+  "resultado": "por registar",
+  "criado": "2026-11-18T13:27:24.299532+00:00",
+  "estado": "11b",
+  "bo": "3",
+  "momento": "3.º set 3-0 (2-6, 6-4)",
+  "msg_id": 97
  }
 ]
