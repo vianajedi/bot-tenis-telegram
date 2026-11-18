@@ -1258,5 +1258,23 @@
   "bo": "3",
   "momento": "2.º set 1-2 (1.º set 2-6)",
   "msg_id": 95
+ },
+ {
+  "data": "18 nov",
+  "torneio": "Challenger - Helsinki",
+  "fav": "Toby Samuel",
+  "oddFav": 1.38,
+  "dog": "Andrea Guerrieri",
+  "oddDog": 2.52,
+  "ct": "all",
+  "liveFav": null,
+  "liveDog": null,
+  "casa": "",
+  "resultado": "por registar",
+  "criado": "2026-11-18T13:01:26.129697+00:00",
+  "estado": "11b",
+  "bo": "3",
+  "momento": "3.º set 0-1 (4-6, 6-3)",
+  "msg_id": 96
  }
 ]
