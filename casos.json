@@ -1420,5 +1420,23 @@
   "bo": "3",
   "momento": "3.º set 3-2 (6-7, 7-5)",
   "msg_id": 104
+ },
+ {
+  "data": "18 nov",
+  "torneio": "Challenger - Metz",
+  "fav": "Clement Tabur",
+  "oddFav": 1.42,
+  "dog": "Inaki Montes-De La Torre",
+  "oddDog": 2.42,
+  "ct": "all",
+  "liveFav": null,
+  "liveDog": null,
+  "casa": "",
+  "resultado": "por registar",
+  "criado": "2026-11-18T17:58:51.033177+00:00",
+  "estado": "dog",
+  "bo": "3",
+  "momento": "2.º set 1-0 (1.º set 3-6)",
+  "msg_id": 105
  }
 ]
