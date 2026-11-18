@@ -1168,5 +1168,23 @@
   "bo": "3",
   "momento": "3.º set 0-0 (1-6, 6-4)",
   "msg_id": 89
+ },
+ {
+  "data": "18 nov",
+  "torneio": "WTA - Colina (F)",
+  "fav": "Antonia Vergara Rivera",
+  "oddFav": 1.47,
+  "dog": "Fernanda Labrana",
+  "oddDog": 2.55,
+  "ct": "all",
+  "liveFav": null,
+  "liveDog": null,
+  "casa": "",
+  "resultado": "por registar",
+  "criado": "2026-11-18T00:46:17.097319+00:00",
+  "estado": "dog",
+  "bo": "3",
+  "momento": "2.º set 0-0 (1.º set 1-6)",
+  "msg_id": 90
  }
 ]
