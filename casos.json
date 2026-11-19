@@ -1438,5 +1438,23 @@
   "bo": "3",
   "momento": "2.º set 1-0 (1.º set 3-6)",
   "msg_id": 105
+ },
+ {
+  "data": "19 nov",
+  "torneio": "WTA - Colina (F)",
+  "fav": "Laura Samson",
+  "oddFav": 1.6,
+  "dog": "Geerlings Martinez Ariana",
+  "oddDog": 2.22,
+  "ct": "all",
+  "liveFav": null,
+  "liveDog": null,
+  "casa": "",
+  "resultado": "por registar",
+  "criado": "2026-11-19T00:20:05.205770+00:00",
+  "estado": "11a",
+  "bo": "3",
+  "momento": "3.º set 0-0 (6-3, 2-6)",
+  "msg_id": 106
  }
 ]
